@@ -1,7 +1,8 @@
 import { ProjectGeneratorSchema } from './schema';
 import { getFirstSegment, getLastSegment } from '@beenest/utils';
-import path from 'path';
+
 import { NormalizedProjectGeneratorSchema } from './normalized-schema';
+import { join } from 'path';
 
 export function normalizeProjectGeneratorSchema(
   options: ProjectGeneratorSchema,
@@ -10,7 +11,7 @@ export function normalizeProjectGeneratorSchema(
   const { directory, type } = options;
   const targetRoot = directory;
   const projectName = getLastSegment(directory);
-  const sourceRoot = path.join(__dirname, type);
+  const sourceRoot = join(__dirname, type);
   const fullProjectName =
     getFirstSegment(mainProjectJson.name) + '/' + projectName;
   return {

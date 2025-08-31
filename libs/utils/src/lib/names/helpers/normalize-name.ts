@@ -1,3 +1,4 @@
+import { InvalidNameError } from '../../errors/errors.js';
 import { isCamelCase } from './is-camel-case.js';
 import { isPascalCase } from './is-pascal-case.js';
 import { isUpperCase } from './is-upper-case.js';
@@ -13,7 +14,9 @@ export function normalizeName(name: string): string {
 
   // If the string value is empty, then throw error
   if (name.length < 2) {
-    throw new Error('InvalidName: name must have at least 2 characters');
+    throw new InvalidNameError(
+      'name must contain at least 2 alphabetic characters'
+    );
   }
 
   if (isPascalCase(name) || isCamelCase(name)) {

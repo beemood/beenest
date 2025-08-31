@@ -2,6 +2,7 @@ import { formatFiles, generateFiles, readJsonFile, Tree } from '@nx/devkit';
 import { ProjectGeneratorSchema } from './schema';
 import { names } from '@beenest/utils';
 import { normalizeProjectGeneratorSchema } from './normalize-schema';
+import { updateTsconfigReference } from './update-tsconfig';
 
 export async function projectGenerator(
   tree: Tree,
@@ -20,6 +21,8 @@ export async function projectGenerator(
     mp,
     ...names(projectName),
   });
+
+  updateTsconfigReference(tree, directory);
   await formatFiles(tree);
 }
 

@@ -1,10 +1,11 @@
 import { Inject, Provider } from '@nestjs/common';
-import { getClientToken } from './client-provider.js';
+import { getClientToken } from './client.js';
+import { getResourceName, names } from '@beenest/utils';
 
 /**
- *
+ * Get resource repository token
  * @param resourceName resource name such as category, product, user.
- * @param datasourceName refers to database name or group name (to group resources)
+ * @param datasourceName database name or group name (to group resources)
  * @returns injection token
  */
 export function getRepositoryToken(resourceName: string, datasourceName = '') {
@@ -12,15 +13,16 @@ export function getRepositoryToken(resourceName: string, datasourceName = '') {
 }
 
 /**
- * Provider resource repository
+ * Provide resource repository
  * @param resourceName resource name such as category, product, user.
- * @param datasourceName refers to database name or group name (to group resources)
+ * @param datasourceName database name or group name (to group resources)
  * @returns Provider
  */
 export function provideRepository(
   resourceName: string,
   datasourceName = ''
 ): Provider {
+  resourceName = names(resourceName).camelCase;
   return {
     inject: [getClientToken(datasourceName)],
     provide: getRepositoryToken(resourceName, datasourceName),
@@ -30,6 +32,13 @@ export function provideRepository(
   };
 }
 
+/**
+ * Inject resource repository
+ * If resourceName is not provided, it is extracted from the target class name
+ * @param resourceName resource name such as category, product, user
+ * @param datasourceName database name or group name (to group resources)
+ * @returns
+ */
 export function InjectRepository(
   resourceName?: string,
   datasourceName = ''
@@ -38,9 +47,14 @@ export function InjectRepository(
     if (resourceName) {
       Inject(getRepositoryToken(resourceName, datasourceName))(...args);
     } else {
-      Inject(getRepositoryToken(args[0].constructor.name, datasourceName))(
-        ...args
-      );
+      resourceName = getResourceName(args[0].constructor.name);
+
+      Inject(
+        getRepositoryToken(
+          names(resourceName).screamingSnakeCase,
+          datasourceName
+        )
+      )(...args);
     }
   };
 }

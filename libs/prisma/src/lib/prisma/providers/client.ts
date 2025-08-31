@@ -5,9 +5,7 @@ import { Inject, Provider } from '@nestjs/common';
  * @param datasourceName optional datasource name (to group resouces)
  * @returns
  */
-export function getClientToken(
-  datasourceName = ''
-) {
+export function getClientToken(datasourceName = '') {
   return `${datasourceName}_DATASOURCE`.toUpperCase();
 }
 

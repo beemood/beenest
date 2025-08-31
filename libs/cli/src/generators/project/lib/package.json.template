@@ -2,7 +2,7 @@
   "version": "<%- mp.version %>",
   "name": "<%- fullProjectName %>",
   "displayName": "<%- titleCase %>",
-  "description": "- [ ] add description to <%- projectName %>",
+  "description": "<%- titleCase %>",
   "license": "MIT",
   "keywords": [
     "beenest"
@@ -10,7 +10,7 @@
   "homepage": "<%- mp.homepage %>/<%- directory %>",
   "icon": "<%- mp.homepage %>/<%- directory %>/assets/favicon.png",
   "author": <%- JSON.stringify(mp.author) %>,
-  "funding": <%- JSON.stringify(mp.funding),
+  "funding": <%- JSON.stringify(mp.funding) %>,
   "publishConfig": {
     "access": "public",
     "tag": "latest"

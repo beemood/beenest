@@ -1,5 +1,5 @@
 {
-  "name": "Nestjs Prisma Module",
+  "name": "<%- titleCase %>",
   "entryPoints": ["./src/index.ts"],
   "favicon": "./favicon.png",
   "out": "../../public/<%- directory %>"

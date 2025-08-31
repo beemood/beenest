@@ -1,4 +1,5 @@
 // @index(['./**/*.ts', '!./**/*.{spec,test}.ts'], f => `export * from '${f.path}.js'`)
+export * from './lib/errors/errors.js';
 export * from './lib/names/custom/get-resource-name.js';
 export * from './lib/names/helpers/is-camel-case.js';
 export * from './lib/names/helpers/is-pascal-case.js';
