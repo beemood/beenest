@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+ts-node ./pre-commit.ts
