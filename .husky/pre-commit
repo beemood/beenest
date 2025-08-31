@@ -1,2 +1,4 @@
-#!/usr/bin/env sh
-ts-node ./pre-commit.ts
+# !/usr/bin/env sh
+
+npx nx run-many -t test build lint 
+
