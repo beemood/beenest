@@ -2,7 +2,7 @@
 
 ## Project Configuration
 
-- [ ] Configure `package.json`, add description, author info, homepage, keywords, funding link, `doc` command to generate project documentation using typedoc
+- [x] Configure `package.json`, add description, author info, homepage, keywords, funding link, `doc` command to generate project documentation using typedoc
 
 ## Nestjs prisma module
 
