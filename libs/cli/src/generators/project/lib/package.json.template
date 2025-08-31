@@ -1,0 +1,69 @@
+{
+  "version": "<%- mp.version %>",
+  "name": "<%- fullProjectName %>",
+  "displayName": "<%- titleCase %>",
+  "description": "- [ ] add description to <%- projectName %>",
+  "license": "MIT",
+  "keywords": [
+    "beenest"
+  ],
+  "homepage": "<%- mp.homepage %>/<%- directory %>",
+  "icon": "<%- mp.homepage %>/<%- directory %>/assets/favicon.png",
+  "author": <%- JSON.stringify(mp.author) %>,
+  "funding": <%- JSON.stringify(mp.funding),
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "bugs": <%- JSON.stringify(mp.bugs) %>,
+  "sponsor": <%- JSON.stringify(mp.sponsor) %>,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "nx": {
+    "sourceRoot": "<%- directory %>/src",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:swc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "<%- directory %>/dist",
+          "main": "<%- directory %>/src/index.ts",
+          "tsConfig": "<%- directory %>/tsconfig.lib.json",
+          "skipTypeCheck": true,
+          "stripLeadingPaths": true
+        }
+      },
+      "doc": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            "npx typedoc"
+          ],
+          "cwd": "{projectRoot}"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/config": "^4.0.2",
+    "@swc/helpers": "~0.5.11"
+  }
+}

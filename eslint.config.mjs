@@ -1,6 +1,14 @@
 import nx from '@nx/eslint-plugin';
 
 export default [
+  {
+    files: ['**/*.json'],
+    // Override or add rules here
+    rules: {},
+    languageOptions: {
+      parser: await import('jsonc-eslint-parser'),
+    },
+  },
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
@@ -27,6 +35,24 @@ export default [
           ],
         },
       ],
+    },
+  },
+
+  {
+    files: ['**/*.json'],
+    rules: {
+      '@nx/dependency-checks': [
+        'warn',
+        {
+          ignoredFiles: [
+            '{projectRoot}/eslint.config.{js,cjs,mjs,ts,cts,mts}',
+            '{projectRoot}/vite.config.{js,ts,mjs,mts}',
+          ],
+        },
+      ],
+    },
+    languageOptions: {
+      parser: await import('jsonc-eslint-parser'),
     },
   },
   {

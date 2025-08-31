@@ -9,6 +9,7 @@
     "DI"
   ],
   "homepage": "https://beemood.github.io/beenest/libs/prisma",
+  "icon": "https://beemood.github.io/beenest/libs/prisma/assets/favicon.png",
   "author": {
     "name": "Robert Brightline",
     "email": "robert-brightline@gmail.com",
@@ -72,6 +73,7 @@
     }
   },
   "dependencies": {
+    "@nestjs/common": "^11.1.6",
     "@swc/helpers": "~0.5.11"
   }
 }

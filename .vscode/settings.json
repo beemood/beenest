@@ -3,5 +3,6 @@
     "source.addMissingImports.ts": "always",
     "source.removeUnusedImports": "always",
     "source.fixAll.eslint": "always"
-  }
+  },
+  "eslint.validate": ["json"]
 }

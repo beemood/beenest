@@ -1,12 +1,34 @@
 {
+  "version": "0.0.1",
   "name": "@beenest/source",
-  "version": "0.0.0",
+  "displayName": "Beenest source",
+  "description": "Common packages",
+  "homepage": "https://beemood.github.io/beenest",
+  "author": {
+    "name": "Robert Brightline",
+    "email": "robert-brightline@gmail.com",
+    "url": "https://beemood.github.io/profile"
+  },
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
+  "bugs": {
+    "email": "robert-brightline@gmail.com"
+  },
+  "sponsor": {
+    "url": "https://beemood.github.io"
+  },
+  "repository": {
+    "directory": "",
+    "type": "github",
+    "url": "https://github.com/beemood/beenest"
+  },
   "license": "MIT",
   "scripts": {
     "prepare": "husky"
   },
-  "private": true,
   "dependencies": {
+    "@nx/devkit": "21.4.1",
     "axios": "^1.6.0"
   },
   "devDependencies": {
@@ -15,6 +37,7 @@
     "@nx/eslint-plugin": "21.4.1",
     "@nx/js": "21.4.1",
     "@nx/node": "21.4.1",
+    "@nx/plugin": "^21.4.1",
     "@nx/vite": "21.4.1",
     "@nx/web": "21.4.1",
     "@nx/workspace": "21.4.1",
@@ -29,6 +52,7 @@
     "eslint-config-prettier": "^10.0.0",
     "husky": "^9.1.7",
     "jiti": "2.4.2",
+    "jsdom": "~22.1.0",
     "jsonc-eslint-parser": "^2.1.0",
     "nx": "21.4.1",
     "prettier": "^2.6.2",

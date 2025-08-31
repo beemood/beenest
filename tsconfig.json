@@ -4,13 +4,13 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/beenest-e2e"
-    },
-    {
-      "path": "./apps/beenest"
-    },
-    {
       "path": "./libs/prisma"
+    },
+    {
+      "path": "./libs/cli"
+    },
+    {
+      "path": "./libs/utils"
     }
   ]
 }
