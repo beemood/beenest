@@ -1,8 +1,8 @@
 import { DynamicModule, Module } from '@nestjs/common';
 import { getClientToken, provideClient } from './providers/client.js';
 import {
-    getRepositoryToken,
-    provideRepository,
+  getRepositoryToken,
+  provideRepository,
 } from './providers/repository.js';
 
 export type PrismaModuleOptions<T extends object> = {

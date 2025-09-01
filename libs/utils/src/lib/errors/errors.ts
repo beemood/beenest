@@ -18,3 +18,9 @@ export class InvalidNameError extends BaseError {
     super(message, InvalidNameError.name, context);
   }
 }
+
+export class NotStringError extends BaseError {
+  constructor(message = 'Value is not a type of string!', context = 'string') {
+    super(message, NotStringError.name, context);
+  }
+}

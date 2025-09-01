@@ -1,6 +1,6 @@
+import { getResourceName, names } from '@beenest/utils';
 import { Inject, Provider } from '@nestjs/common';
 import { getClientToken } from './client.js';
-import { getResourceName, names } from '@beenest/utils';
 
 /**
  * Get resource repository token

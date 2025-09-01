@@ -18,6 +18,8 @@ export * from './lib/names/to-plural-name.js';
 export * from './lib/names/to-sentence-case.js';
 export * from './lib/names/to-snake-case.js';
 export * from './lib/names/to-title-case.js';
+export * from './lib/object/parse-json.js';
+export * from './lib/string/is-empty-string.js';
 export * from './lib/url/file-name.js';
 export * from './lib/url/get-first-segment.js';
 export * from './lib/url/get-last-segment.js';
