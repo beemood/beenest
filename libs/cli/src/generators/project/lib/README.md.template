@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="<%- mp.content %>/<%- directory %>/favicon.png" alt="Logo" />
+  <img src="<%- mp.homepage %>/<%- directory %>/assets/favicon.png" alt="Logo" />
 </p>
 
 # <%- fullProjectName %>

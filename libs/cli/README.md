@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/beemood/beenest/refs/heads/main/libs/cli/favicon.png" alt="Logo" />
+  <img src="https://beemood.github.io/beenest/libs/cli/assets/favicon.png" alt="Logo" />
 </p>
 
 # @beenest/cli

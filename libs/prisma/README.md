@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/beemood/beenest/refs/heads/main/libs/prisma/favicon.png" alt="Logo" />
+  <img src="https://beemood.github.io/beenest/libs/prisma/assets/favicon.png" alt="Logo" />
 </p>
 
 # @beenest/prisma

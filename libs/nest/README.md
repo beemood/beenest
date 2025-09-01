@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/libs/nest/favicon.png" alt="Logo" />
+  <img src="https://beemood.github.io/beenest/libs/nest/assets/favicon.png" alt="Logo" />
 </p>
 
 # @beenest/nest
