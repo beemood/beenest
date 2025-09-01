@@ -54,7 +54,7 @@ describe('AutoMethod Decorators', () => {
   class AppModule {}
 
   let app: INestApplication;
-  let controller = new SampleController();
+  const controller = new SampleController();
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
