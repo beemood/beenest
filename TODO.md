@@ -1,6 +1,6 @@
 # @beenest/source
 
 - [x] Generate prisma module
-- [ ] Generate cli module
+- [x] Generate cli module
 - [ ] Generate prisma-zod module
-- [ ] Generate nest module
+- [x] Generate nest module
