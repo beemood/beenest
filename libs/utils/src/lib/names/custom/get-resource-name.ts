@@ -1,8 +1,10 @@
 /**
- * The function refer the name from functions or special classes such as from Controller, Service, and Module
+ * Infer resource name from the given class name
+ * @param className target class name
+ * @returns resource name
  */
-export function getResourceName(name: string) {
-  const resouceName = name.replace(
+export function getResourceName(className: string) {
+  const resouceName = className.replace(
     /Controller|Service|Module|Repository|findOne|findMany|find|Query|Dto|create|save|delete|update|byId/gi,
     ''
   );

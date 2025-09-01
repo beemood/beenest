@@ -1,0 +1,29 @@
+{
+  "Export all files": {
+    "prefix": "..export-all",
+    "body": "// @index(['./**/*.ts', '!./**/*.{spec,test}.ts'], f => `export * from '${f.path}.js'`)",
+    "scope": "typescript"
+  },
+  "Executable files": {
+    "prefix": "..shebang",
+    "body": "#!/usr/bin/env ${1|node,ts-node|}",
+    "scope": "typescript,javascript"
+  },
+  "funct": {
+    "prefix": "..function",
+    "body": ["export function $1(){ ", "", "", "}"],
+    "scope": "typescript,javascript"
+  },
+
+  "property decorator": {
+    "prefix": "..decorator",
+    "body": [
+      "export function $1($3): ${2|Property,Class,Method,Parameter|}Decorator {",
+      "  return (...args) => {",
+      "    $0",
+      "  };",
+      "}"
+    ],
+    "scope": "typescript,javascript"
+  }
+}

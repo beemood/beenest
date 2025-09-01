@@ -1,0 +1,82 @@
+{
+  "version": "0.0.1",
+  "name": "@beenest/nest",
+  "displayName": "Nest",
+  "description": "Nest",
+  "license": "MIT",
+  "keywords": [
+    "beenest"
+  ],
+  "homepage": "https://beemood.github.io/beenest/libs/nest",
+  "icon": "https://beemood.github.io/beenest/libs/nest/assets/favicon.png",
+  "author": {
+    "name": "Robert Brightline",
+    "email": "robert-brightline@gmail.com",
+    "url": "https://beemood.github.io/profile"
+  },
+  "funding": [
+    "https://cash.app/$puqlib"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "bugs": {
+    "email": "robert-brightline@gmail.com"
+  },
+  "sponsor": {
+    "url": "https://beemood.github.io"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "nx": {
+    "sourceRoot": "libs/nest/src",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:swc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "libs/nest/dist",
+          "main": "libs/nest/src/index.ts",
+          "tsConfig": "libs/nest/tsconfig.lib.json",
+          "skipTypeCheck": true,
+          "stripLeadingPaths": true
+        }
+      },
+      "doc": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            "npx typedoc"
+          ],
+          "cwd": "{projectRoot}"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@beenest/utils": "workspace:*",
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.1.6",
+    "@nestjs/swagger": "^11.2.0",
+    "@swc/helpers": "~0.5.11"
+  }
+}

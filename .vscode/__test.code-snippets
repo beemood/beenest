@@ -1,0 +1,30 @@
+{
+  "Test": {
+    "prefix": "..test",
+    "body": [
+      "describe('$1', () => {",
+      "  it('$1', ()=> { ",
+      "     $0",
+      "  })",
+      "});"
+    ],
+    "scope": "typescript"
+  },
+  "Each test": {
+    "prefix": "..each-test",
+    "body": [
+      "describe('$1', () => {",
+      "  it.each`",
+      "    value        | expected",
+      "    ${''}        | ${''}",
+      "  `(",
+      "    `$1([$value]) should return [$expected]`,",
+      "    ({ value, expected }) => {",
+      "      expect($1(value)).toEqual(expected);",
+      "    }",
+      "  );",
+      "});"
+    ],
+    "scope": "typescript"
+  }
+}

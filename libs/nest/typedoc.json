@@ -1,0 +1,6 @@
+{
+  "name": "Nest",
+  "entryPoints": ["./src/index.ts"],
+  "favicon": "./favicon.png",
+  "out": "../../public/libs/nest"
+}
