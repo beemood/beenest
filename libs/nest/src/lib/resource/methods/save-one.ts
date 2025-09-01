@@ -5,10 +5,7 @@ import { OperationName } from '../../metadata/operation-name.js';
 import { SelectParams } from '../swagger/select-params.js';
 
 /**
- * Save one item
- *
  * `POST /singular-path`
- *
  * @returns MethodDecorator
  */
 export function SaveOne(): MethodDecorator {

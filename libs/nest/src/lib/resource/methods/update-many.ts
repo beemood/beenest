@@ -6,13 +6,10 @@ import { SelectParams } from '../swagger/select-params.js';
 import { WhereParams } from '../swagger/where-paramas.js';
 
 /**
- * Update many items
- *
  * `PUT /plural-path`
- *
  * @returns MethodDecorator
  */
-export function UpddateMany(): MethodDecorator {
+export function UpdateMany(): MethodDecorator {
   return (...args) => {
     const className = args[0].constructor.name;
     const resouceName = getResourceName(className);

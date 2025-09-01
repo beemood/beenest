@@ -5,10 +5,7 @@ import { OperationName } from '../../metadata/operation-name.js';
 import { WhereParams } from '../swagger/where-paramas.js';
 
 /**
- * Delete many item by query
- *
  * `DELETE /plural-path`
- *
  * @returns MethodDecorator
  */
 export function DeleteMany(): MethodDecorator {

@@ -5,10 +5,7 @@ import { OperationName } from '../../metadata/operation-name.js';
 import { SelectParams } from '../swagger/select-params.js';
 
 /**
- * Save many items
- *
  * `POST /plural-path`
- *
  * @returns MethodDecorator
  */
 export function SaveMany(): MethodDecorator {

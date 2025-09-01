@@ -5,10 +5,7 @@ import { OperationName } from '../../metadata/operation-name.js';
 import { SelectParams } from '../swagger/select-params.js';
 
 /**
- * Find items by id which provided in url params
- *
  * `GET /singular-path/:id`
- *
  * @returns MethodDecorator
  */
 export function FindOneById(): MethodDecorator {

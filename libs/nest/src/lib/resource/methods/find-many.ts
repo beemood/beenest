@@ -8,11 +8,7 @@ import { SelectParams } from '../swagger/select-params.js';
 import { WhereParams } from '../swagger/where-paramas.js';
 
 /**
- *
- * Find many items by query which is provided in url query
- *
- * `GET /plural-path/?take=100&skip=0.....`
- *
+ * `GET /plural-path`
  * @returns MethodDecorator
  */
 export function FindMany(): MethodDecorator {
