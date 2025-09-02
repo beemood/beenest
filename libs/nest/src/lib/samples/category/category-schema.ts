@@ -1,4 +1,4 @@
-import { parseJson } from '@beenest/utils';
+import { parseJsonOrParam } from '@beenest/utils';
 import z from 'zod';
 import { BooleanFilterSchema } from '../../zod/filter/boolean-filter.js';
 import { DateFilterSchema } from '../../zod/filter/date-filter.js';
@@ -30,7 +30,7 @@ export class CategorySchema {
   static readonly OrderBy = createOrderBySchema(this.Fields);
 
   static readonly Where = z.preprocess(
-    parseJson,
+    parseJsonOrParam,
     z
       .object({
         id: IntegerFilterSchema,
