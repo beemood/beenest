@@ -1,9 +1,10 @@
+import { parseIntOrParam } from '@beenest/utils';
 import z from 'zod';
 
 export const NameSchema = z.string().min(2).max(30);
 
 export const PositiveIntegerSchema = z.preprocess(
-  (value: any) => parseInt(value),
+  parseIntOrParam,
   z.int().min(0)
 );
 

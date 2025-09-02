@@ -1,9 +1,10 @@
 import { normalizeName } from './helpers/normalize-name.js';
 import { upperCaseFirst } from './helpers/upper-case-first.js';
 /**
- * Convert the given string value into title case
- * @param name string
- * @returns title case string
+ * Convert {@link name} into title case
+ * @param name string value
+ * @returns Title case of {@link name}
+ *
  */
 export function toTitleCase(name: string): string {
   return normalizeName(name)

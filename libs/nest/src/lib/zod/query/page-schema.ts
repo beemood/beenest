@@ -1,4 +1,4 @@
-import { parseJson } from '@beenest/utils';
+import { parseJsonOrParam } from '@beenest/utils';
 import z from 'zod';
 import { PositiveIntegerSchema } from '../literals/literals.js';
 
@@ -8,7 +8,7 @@ export const PageObject = {
 };
 
 export const PageSchema = z.preprocess(
-  parseJson,
+  parseJsonOrParam,
   z.object(PageObject).partial().optional()
 );
 

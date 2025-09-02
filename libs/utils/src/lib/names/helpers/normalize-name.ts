@@ -1,22 +1,29 @@
 import { InvalidNameError } from '../../errors/errors.js';
+import { trim } from '../../string/trim.js';
 import { isCamelCase } from './is-camel-case.js';
 import { isPascalCase } from './is-pascal-case.js';
 import { isUpperCase } from './is-upper-case.js';
-import { trim } from './trim.js';
 
 /**
- * Normalize the given string by transforming it into a lower case single space seperated string by replace all posibble delimeters and extra spaces.
- * @param name string value (at least 2 characters long)
- * @returns string (sentence case string)
+ * Trim {@link name}, replace all types of **delimeters** with a **single space**, and lowercase.
+ *
+ * @group name
+ * @param name name string
+ * @returns Trimmed and normalized string value
+ * @throws Error {@link InvalidNameError} if{@link name} length is out of the range of 2 to 30 characters
+ *
+ *
+ *
  */
 export function normalizeName(name: string): string {
   name = trim(name);
 
-  // If the string value is empty, then throw error
   if (name.length < 2) {
-    throw new InvalidNameError(
-      'name must contain at least 2 alphabetic characters'
-    );
+    throw new InvalidNameError('Name length must have at least 2 characters');
+  }
+
+  if (name.length > 30) {
+    throw new InvalidNameError(`Name length must have at most 30 characters`);
   }
 
   if (isPascalCase(name) || isCamelCase(name)) {
@@ -33,5 +40,6 @@ export function normalizeName(name: string): string {
       .join('')
       .toLowerCase();
   }
+
   return name.replace(/[.\-_\s]{1,}/g, ' ').toLowerCase();
 }
