@@ -5,7 +5,7 @@ import { segments } from './segments.js';
 /**
  * Get the last segment of {@link filePath}
  *
- * @group url
+ * @group Url
  * @param filePath File path that to get the last segment from
  * @returns The last segment of the {@link filePath}
  * @throws Error {@link UndefinedError} if the file path is empty or the return-value is undefined

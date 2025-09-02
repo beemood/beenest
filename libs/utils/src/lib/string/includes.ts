@@ -4,7 +4,7 @@ import { isEmptyString } from './is-empty-string.js';
 /**
  * Determines if a string contains a specified substring, ignoring case.
  *
- * @group string
+ * @group String
  * @param mainString The string to search within.
  * @param subString The substring to search for.
  * @returns `true` if {@link mainString} includes {@link subString}, `false` otherwise.

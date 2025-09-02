@@ -4,7 +4,7 @@ import { isEmptyString } from './is-empty-string.js';
 /**
  * Trim {@link stringValue} and remove all extrate space characters
  *
- * @group string
+ * @group String
  * @param stringValue String value to trim and replace all extra spaces in the text
  * @returns Trimmed string value
  * @throws Error {@link EmptyStringError} if the {@link stringValue} is empty

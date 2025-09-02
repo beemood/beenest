@@ -5,7 +5,7 @@ import { segments } from './segments.js';
 /**
  * Get the first segment of {@link filePath}
  *
- * @group url
+ * @group Url
  * @param filePath File path to get the first segment of {@link filePath}
  * @returns The first segment of {@link filePath}
  *

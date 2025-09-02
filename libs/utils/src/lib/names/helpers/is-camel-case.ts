@@ -1,5 +1,6 @@
 /**
  * Check the given string value is camel case with at least 2 characters
+ * 
  * @param name string
  * @returns boolean
  */

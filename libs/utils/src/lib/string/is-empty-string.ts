@@ -1,7 +1,7 @@
 /**
  * Check {@link stringValue} is empty or not.
  *
- * @group string
+ * @group String
  * @param stringValue The string to check
  * @returns `true` if the {@link stringValue} is **empty** or only includes **space characters**, `false` otherwise
  *

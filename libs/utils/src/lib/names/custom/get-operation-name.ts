@@ -12,9 +12,20 @@ export enum OperationNames {
 }
 
 /**
- * Infer the operation name from method name
- * @param methodName class method name
- * @returns operation name {@link OperationName}
+ * Infer {@link OperationNames} from {@link methodName}
+ *
+ * @group names
+ * @param methodName Generally method name that {@link OperationNames} to be infered from
+ * @returns Infered operation name {@link OperationNames}
+ * @throws Error {@link InvalidNameError} if not infered any {@link OperationNames} from {@link methodName}
+ *
+ * @example
+ * ```ts
+ *    getOperationName('findOne')         // returns: OperationNames.READ_ONE
+ *    getOperationName('findAll')         // returns: OperationNames.READ_MANY
+ *    getOperationName('someFunction')    // throws: InvalidNameError
+ *
+ * ```
  */
 export function getOperationName(methodName: string): OperationNames {
   // Check the method name starts with the prefix

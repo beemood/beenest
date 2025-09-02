@@ -4,7 +4,7 @@ import { isEmptyString } from '../string/is-empty-string.js';
 /**
  * Get the segments of {@link filePath}
  *
- * @group url
+ * @group Url
  * @param filePath File path to split into segments
  * @returns List of segments of the {@link filePath}
  * @throws Error {@link EmptyStringError} if the {@link filePath} is empty
