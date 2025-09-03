@@ -9,4 +9,8 @@ describe('AuthMethod: Decorators', () => {
       return { findOneById: true };
     }
   }
+
+  it('should initialize', () => {
+    expect(new SampleController()).toBeDefined();
+  });
 });

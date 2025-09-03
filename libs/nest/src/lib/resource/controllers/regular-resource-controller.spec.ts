@@ -1,18 +1,19 @@
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { SecuredResource } from '../../metadata/secured.js';
 import { ResourceController } from './resource-controller.js';
+
 describe('Regular: ResourceController', () => {
   beforeAll(() => {
     vi.mock('@nestjs/swagger', () => {
       return {
-        ApiTags: vi.fn().mockReturnValue(() => {}),
-        ApiBearerAuth: vi.fn().mockReturnValue(() => {}),
+        ApiTags: vi.fn().mockReturnValue(() => ({})),
+        ApiBearerAuth: vi.fn().mockReturnValue(() => ({})),
       };
     });
 
     vi.mock('../../metadata/secured.js', () => {
       return {
-        SecuredResource: vi.fn().mockReturnValue(() => {}),
+        SecuredResource: vi.fn().mockReturnValue(() => ({})),
       };
     });
   });

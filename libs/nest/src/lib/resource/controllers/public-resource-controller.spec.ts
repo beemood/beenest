@@ -6,14 +6,14 @@ describe('Public: ResourceController', () => {
   beforeAll(() => {
     vi.mock('@nestjs/swagger', () => {
       return {
-        ApiTags: vi.fn().mockReturnValue(() => {}),
-        ApiBearerAuth: vi.fn().mockReturnValue(() => {}),
+        ApiTags: vi.fn().mockReturnValue(() => ({})),
+        ApiBearerAuth: vi.fn().mockReturnValue(() => ({})),
       };
     });
 
     vi.mock('../../metadata/public.js', () => {
       return {
-        PublicResource: vi.fn().mockReturnValue(() => {}),
+        PublicResource: vi.fn().mockReturnValue(() => ({})),
       };
     });
   });
