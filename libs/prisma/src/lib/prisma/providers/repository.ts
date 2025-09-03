@@ -47,7 +47,7 @@ export function InjectRepository(
     if (resourceName) {
       Inject(getRepositoryToken(resourceName, datasourceName))(...args);
     } else {
-      resourceName = inferResourceName(args[0].constructor.name);
+      resourceName = inferResourceName((args[0] as any).name);
 
       Inject(
         getRepositoryToken(

@@ -56,6 +56,6 @@ export function inferOperationName(operationName: string): OperationNames {
   }
 
   throw new InvalidNameError(
-    `The operation nmae, ${operationName}, is invalid. The operation name must match ${OPERATION_NAME_EXPRESSION()}`
+    `The operation name, ${operationName}, is invalid. The operation name must match ${OPERATION_NAME_EXPRESSION()}`
   );
 }
