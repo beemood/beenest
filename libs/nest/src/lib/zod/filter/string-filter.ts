@@ -4,8 +4,16 @@ import z from 'zod';
  * @group Zod
  */
 export const __StringFilterObject = {
-  equal: z.string(),
+  equals: z.string(),
+  in: z.string().array(),
+  notIn: z.string().array(),
+  lt: z.string(),
+  lte: z.string(),
+  gt: z.string(),
+  gte: z.string(),
+  contains: z.string(),
   startsWith: z.string(),
+  endsWith: z.string(),
 };
 
 /**

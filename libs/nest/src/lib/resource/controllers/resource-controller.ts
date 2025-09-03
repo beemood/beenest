@@ -20,7 +20,7 @@ export function ResourceController(): ClassDecorator {
     const resourceName = inferResourceName(className);
 
     if (isPublicName(className)) {
-      ApiTags(resourceName + ' ( Public ) ')(...args);
+      ApiTags(resourceName + ' ( Public )')(...args);
       PublicResource()(...args);
     } else {
       ApiTags(resourceName)(...args);

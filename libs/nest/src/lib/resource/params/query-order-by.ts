@@ -1,6 +1,6 @@
 import { Query } from '@nestjs/common';
 /**
- * `orderBy` query parameter decorator to inject `orderBy` from request url
+ * Inject `orderBy` query param from request
  *
  * @group Parameter Decorators
  * @returns ParameterDecorator

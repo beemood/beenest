@@ -1,6 +1,6 @@
 import { Param, ParseIntPipe } from '@nestjs/common';
 /**
- * `id` parameter decorator to inject `id` parameter from request url
+ * Inject `id` url param from request
  *
  * @group Parameter Decorators
  * @returns ParameterDecorator

@@ -4,7 +4,13 @@ import z from 'zod';
  * @group Zod
  */
 export const __DateFilterObject = {
-  equal: z.iso.datetime(),
+  equals: z.iso.datetime(),
+  in: z.iso.datetime().array(),
+  notIn: z.iso.datetime().array(),
+  lt: z.iso.datetime(),
+  lte: z.iso.datetime(),
+  gt: z.iso.datetime(),
+  gte: z.iso.datetime(),
 };
 
 /**

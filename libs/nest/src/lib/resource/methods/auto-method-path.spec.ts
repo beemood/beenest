@@ -4,7 +4,7 @@ import request from 'supertest';
 import { ResourceController } from '../controllers/resource-controller.js';
 import { AutoMethod } from './auto-method.js';
 
-describe('AutoMethod Decorators', () => {
+describe('AuthMethod: Path Test', () => {
   @ResourceController()
   class SampleController {
     @AutoMethod()

@@ -1,6 +1,6 @@
 import { Param } from '@nestjs/common';
 /**
- * `uuid` parameter decorator to inject `uuid` from request url
+ * Inject `uuid` url param from request
  *
  * @group Parameter Decorators
  * @returns ParameterDecorator

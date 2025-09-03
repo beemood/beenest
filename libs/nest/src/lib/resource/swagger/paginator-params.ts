@@ -1,6 +1,6 @@
 import { ApiQuery } from '@nestjs/swagger';
 /**
- * Swagger doc for `take` and `skip` query param
+ * Define `orderBy` object query param
  *
  * @group Swagger
  * @returns MethodDecorator

@@ -1,6 +1,6 @@
 import { ParseIntPipe, Query } from '@nestjs/common';
 /**
- * `skip` query parameter decorator to inject `skip` from request url
+ * Inject `skip` query param from request
  *
  * @group Parameter Decorators
  * @returns ParameterDecorator

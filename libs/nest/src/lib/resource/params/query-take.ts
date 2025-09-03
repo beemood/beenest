@@ -1,7 +1,7 @@
 import { ParseIntPipe, Query } from '@nestjs/common';
 
 /**
- * `take` query parameter decorator to inject `take` from request url
+ * Inject `take` query param from request
  *
  * @group Parameter Decorators
  * @returns ParameterDecorator

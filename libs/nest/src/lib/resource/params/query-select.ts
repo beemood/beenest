@@ -1,7 +1,7 @@
 import { Query } from '@nestjs/common';
 
 /**
- * `select` query parameter decorator to inject `select` from request url
+ * Inject `select` query param from request
  *
  * @group Parameter Decorators
  * @returns ParameterDecorator

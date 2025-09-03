@@ -1,9 +1,10 @@
 import z from 'zod';
+
 /**
  * @group Zod
  */
 export const __BooleanFilterObject = {
-  equal: z.boolean(),
+  equals: z.boolean(),
 };
 
 /**
