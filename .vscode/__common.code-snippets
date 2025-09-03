@@ -9,7 +9,7 @@
     "body": "#!/usr/bin/env ${1|node,ts-node|}",
     "scope": "typescript,javascript"
   },
-  "funct": {
+  "function": {
     "prefix": "..function",
     "body": ["export function $1(){ ", "", "", "}"],
     "scope": "typescript,javascript"
@@ -25,5 +25,19 @@
       "}"
     ],
     "scope": "typescript,javascript"
+  },
+  "error": {
+    "prefix": "...error",
+    "body": [
+      "/**",
+      "* @group Errors",
+      "*/",
+      "export class $1Error extends BaseError {",
+      "  constructor(message = 'Error Message', context = 'error') {",
+      "    super(message, $1Error.name, context);",
+      "  }",
+      "}"
+    ],
+    "scope": "typescript"
   }
 }

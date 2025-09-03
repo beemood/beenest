@@ -7,7 +7,7 @@ import { isUpperCase } from './is-upper-case.js';
 /**
  * Trim {@link name}, replace all types of **delimeters** with a **single space**, and lowercase.
  *
- * @group name
+ * @group Names
  * @param name name string
  * @returns Trimmed and normalized string value
  * @throws Error {@link InvalidNameError} if{@link name} length is out of the range of 2 to 30 characters

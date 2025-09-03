@@ -11,7 +11,7 @@ import {
 /**
  * Infer the resource name, such as Product, Category, from {@link targetName} which might be class or method name such as ProductController, CategoryService, or findManyProduct etc..
  *
- * @group names
+ * @group Names
  * @param targetName Class or method name
  * @returns Infered resource name
  * @throws Error {@link InvalidNameError} if {@link targetName } does not match neiter of {@link RESOURCE_NAME_EXPRESSION} or {@link OPERATION_NAME_EXPRESSION}

@@ -4,6 +4,13 @@ export const RESOURCE_NAME_EXPRESSION = () =>
     'gi'
   );
 
+/**
+ * Check the {@link resouceName} is a valid resource name {@link RESOURCE_NAME_EXPRESSION}
+ * 
+ * @group Names
+ * @param resouceName
+ * @returns boolean
+ */
 export function isResourceName(resouceName: string) {
   return RESOURCE_NAME_EXPRESSION().test(resouceName);
 }

@@ -20,7 +20,7 @@ export function isEmptyString(stringValue: string): stringValue is '' {
 /**
  * Check {@link stringValue} is **empty** or only include **space characters**.
  *
- * @group string
+ * @group String
  * @param stringValue The string value to check
  * @returns `false` if the {@link stringValue} is **empty** or only includes **space characters**, `true` otherwise
  *

@@ -4,6 +4,13 @@ export const OPERATION_NAME_EXPRESSION = () =>
     'gi'
   );
 
+/**
+ * Check the {@link operationName} is a valid operation name {@link OPERATION_NAME_EXPRESSION}
+ *
+ * @group Names
+ * @param operationName
+ * @returns boolean
+ */
 export function isOperationName(operationName: string) {
   return OPERATION_NAME_EXPRESSION().test(operationName);
 }

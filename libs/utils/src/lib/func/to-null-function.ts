@@ -8,8 +8,9 @@
  * @example
  *
  * ```ts
- *    const anyFunction  = ()=>throw Error("Sample error");
- *    toNullFunction(anyFunction)   // output: null
+ *    const anyFunction    = (someValue)=> throw Error();
+ *    const newAnyFunction = toNullFunction(anyFunction)
+ *    newAnyFunction('some param')  // output: null
  * ```
  */
 export function toNullFunction<T extends (...args: any[]) => any>(

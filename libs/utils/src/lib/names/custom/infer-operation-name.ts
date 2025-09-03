@@ -1,7 +1,12 @@
 import { InvalidNameError } from '../../errors/errors.js';
 import { createStartsWithFunction } from '../../func/create-starts-with-function.js';
 import { OPERATION_NAME_EXPRESSION } from './is-operation-name.js';
-
+/**
+ * Operation names enum
+ *
+ * @group Names
+ *
+ */
 export enum OperationNames {
   READ_ONE = 'READ_ONE',
   WRITE_ONE = 'WRITE_ONE',
@@ -16,7 +21,7 @@ export enum OperationNames {
 /**
  * Infer {@link OperationNames} from {@link operationName}
  *
- * @group names
+ * @group Names
  * @param operationName Generally method name that {@link OperationNames} to be infered from
  * @returns Infered operation name {@link OperationNames}
  * @throws Error {@link InvalidNameError} if not infered any {@link OperationNames} from {@link operationName}

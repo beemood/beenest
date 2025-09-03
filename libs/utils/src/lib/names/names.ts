@@ -7,7 +7,7 @@ import { toSnakeCase } from './to-snake-case.js';
 import { toTitleCase } from './to-title-case.js';
 
 /**
- * @group names
+ * @group Names
  */
 export type Names = {
   snakeCase: string;

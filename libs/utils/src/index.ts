@@ -8,6 +8,8 @@ export * from './lib/func/to-null-function.js';
 export * from './lib/func/to-param-function.js';
 export * from './lib/names/custom/infer-operation-name.js';
 export * from './lib/names/custom/infer-resource-name.js';
+export * from './lib/names/custom/is-operation-name.js';
+export * from './lib/names/custom/is-resource-name.js';
 export * from './lib/names/helpers/is-camel-case.js';
 export * from './lib/names/helpers/is-pascal-case.js';
 export * from './lib/names/helpers/is-screaming-upper-case.js';

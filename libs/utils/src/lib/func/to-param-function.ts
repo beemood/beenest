@@ -8,8 +8,9 @@
  * @example
  *
  * ```ts
- *    const anyFunction  = (someValue)=>throw Error("Sample error");
- *    toParamFunction(anyFunction)   // output: someValue
+ *    const anyFunction    = (someValue)=> throw Error();
+ *    const newAnyFunction = toParamFunction(anyFunction)
+ *    newAnyFunction('some param')  // output: 'some param'
  * ```
  */
 export function toParamFunction<T extends (param: any) => any>(anyFunction: T) {
