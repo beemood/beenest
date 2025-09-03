@@ -1,6 +1,6 @@
 import { inferResourceName, names, OperationNames } from '@beenest/utils';
 import { Delete } from '@nestjs/common';
-import { ApiOperation, ApiParam } from '@nestjs/swagger';
+import { ApiOperation } from '@nestjs/swagger';
 import { OperationName } from '../../metadata/operation-name.js';
 import { SelectParams } from '../swagger/select-params.js';
 
@@ -22,6 +22,5 @@ export function DeleteOneById(): MethodDecorator {
     OperationName(OperationNames.UPDATE_ONE)(...args);
     ApiOperation({ summary })(...args);
     SelectParams()(...args);
-    ApiParam({ name: 'id', schema: { type: 'integer', minimum: 1 } })(...args);
   };
 }
