@@ -1,6 +1,6 @@
 import { inferResourceName, names, OperationNames } from '@beenest/utils';
 import { Post } from '@nestjs/common';
-import { ApiOperation } from '@nestjs/swagger';
+import { ApiBody, ApiOperation } from '@nestjs/swagger';
 import { OperationName } from '../../metadata/operation-name.js';
 import { SelectParams } from '../swagger/select-params.js';
 
@@ -22,5 +22,6 @@ export function SaveOne(): MethodDecorator {
     OperationName(OperationNames.WRITE_ONE)(...args);
     ApiOperation({ summary })(...args);
     SelectParams()(...args);
+    ApiBody({ schema: { type: 'object', properties: {} } })(...args);
   };
 }

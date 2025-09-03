@@ -1,6 +1,6 @@
 import { inferResourceName, OperationNames, pluralNames } from '@beenest/utils';
 import { Put } from '@nestjs/common';
-import { ApiOperation } from '@nestjs/swagger';
+import { ApiBody, ApiOperation } from '@nestjs/swagger';
 import { OperationName } from '../../metadata/operation-name.js';
 import { SelectParams } from '../swagger/select-params.js';
 import { WhereParams } from '../swagger/where-paramas.js';
@@ -24,5 +24,6 @@ export function UpdateMany(): MethodDecorator {
     ApiOperation({ summary })(...args);
     SelectParams()(...args);
     WhereParams()(...args);
+    ApiBody({ schema: { type: 'object', properties: {} } })(...args);
   };
 }
