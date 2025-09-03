@@ -6,6 +6,6 @@
 
 ## Nestjs prisma module
 
-- [ ] Create client provider and injector.
-- [ ] Create repository provider and injector.
-- [ ] Create prisma module that provides root and feature options that provides client and repositories
+- [x] Create client provider and injector.
+- [x] Create repository provider and injector.
+- [x] Create prisma module that provides root and feature options that provides client and repositories
