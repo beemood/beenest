@@ -1,3 +1,18 @@
+## 0.0.3 (2025-09-03)
+
+### 🚀 Features
+
+- created common prisma filter schemas ([745e9ed](https://github.com/beemood/beenest/commit/745e9ed))
+- created common prisma filter schemas ([77d9cf1](https://github.com/beemood/beenest/commit/77d9cf1))
+
+### 🩹 Fixes
+
+- fixed inferResouceName parameters in repository injector ([0426a2f](https://github.com/beemood/beenest/commit/0426a2f))
+
+### ❤️ Thank You
+
+- Robert Brightline @beemood
+
 ## 0.0.1 (2025-09-03)
 
 ### 🚀 Features
