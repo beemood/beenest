@@ -1,13 +1,17 @@
 import { isPublicName } from './is-public-name.js';
+
 describe('isPublicName', () => {
   it.each`
-    value                         | expected
+    resourceName                  | expected
     ${''}                         | ${false}
     ${'public'}                   | ${true}
     ${'Public'}                   | ${true}
     ${'PublicResourceController'} | ${true}
     ${'ProductControllerPublic'}  | ${true}
-  `('isPublicName($value) should return expected', ({ value, expected }) => {
-    expect(isPublicName(value)).toEqual(expected);
-  });
+  `(
+    'isPublicName($resourceName) should return $expected',
+    ({ resourceName, expected }) => {
+      expect(isPublicName(resourceName)).toEqual(expected);
+    }
+  );
 });

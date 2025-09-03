@@ -4,8 +4,11 @@ import { Reflector } from '@nestjs/core';
 export const SECURED_METADATA_KEY = Symbol('SECURED_METADATA_KEY');
 
 /**
- * Mark the resource controller as secured
+ * Set `true` to {@link SECURED_METADATA_KEY}
+ *
+ * @group Metadata
  * @returns ClassDecorator
+ *
  */
 export function SecuredResource(): ClassDecorator {
   return (...args) => {
@@ -14,8 +17,10 @@ export function SecuredResource(): ClassDecorator {
 }
 
 /**
- * Mark the resource method as secured
- * @returns ClassDecorator
+ * Set `true` to {@link SECURED_METADATA_KEY}
+ *
+ * @group Metadata
+ * @returns MethodDecorator
  */
 export function SecuredOperation(): MethodDecorator {
   return (...args) => {
@@ -24,11 +29,15 @@ export function SecuredOperation(): MethodDecorator {
 }
 
 /**
- * Check the resource is secured or not.
- * If resource class is decorated secured, then all methods are secured.
+ * Get {@link SECURED_METADATA_KEY} value from context
+ *
+ * @important {@link SecuredResource} decorator overides {@link SecuredOperation}
+ *
+ * @group Metadata
  * @param reflector Reflector
  * @param context ExecutionContext
- * @returns
+ * @returns `true` if the resource/method is marked by either {@link SecuredResource} or {@link SecuredOperation}, `undefined` otherwise
+ *
  */
 export function isSecured(
   reflector: Reflector,

@@ -4,8 +4,11 @@ import { Reflector } from '@nestjs/core';
 export const PUBLIC_METADATA_KEY = Symbol('PUBLIC_METADATA_KEY');
 
 /**
- * Mark resource controller as public
+ * Set `true` to {@link PUBLIC_METADATA_KEY}
+ *
+ * @group Metadata
  * @returns ClassDecorator
+ *
  */
 export function PublicResource(): ClassDecorator {
   return (...args) => {
@@ -14,7 +17,9 @@ export function PublicResource(): ClassDecorator {
 }
 
 /**
- * Mark resource method as public
+ * Set `true` to {@link PUBLIC_METADATA_KEY}
+ *
+ * @group Metadata
  * @returns MethodDecorator
  */
 export function PublicOperation(): MethodDecorator {
@@ -24,11 +29,15 @@ export function PublicOperation(): MethodDecorator {
 }
 
 /**
- * Check the resource is public or not.
- * If resource class is decorated public, then all methods are public.
+ * Get {@link PUBLIC_METADATA_KEY} value from context
+ *
+ * @important {@link PublicResource} decorator overides {@link PublicOperation}
+ *
+ * @group Metadata
  * @param reflector Reflector
  * @param context ExecutionContext
- * @returns
+ * @returns `true` if the resource/method is marked by either {@link PublicResource} or {@link PublicOperation}, `undefined` otherwise
+ *
  */
 export function isPublic(
   reflector: Reflector,

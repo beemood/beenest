@@ -1,4 +1,4 @@
-import { getResourceName, names, OperationNames } from '@beenest/utils';
+import { inferResourceName, names, OperationNames } from '@beenest/utils';
 import { Get } from '@nestjs/common';
 import { ApiOperation } from '@nestjs/swagger';
 import { OperationName } from '../../metadata/operation-name.js';
@@ -11,7 +11,7 @@ import { SelectParams } from '../swagger/select-params.js';
 export function FindOneById(): MethodDecorator {
   return (...args) => {
     const className = args[0].constructor.name;
-    const resouceName = getResourceName(className);
+    const resouceName = inferResourceName(className);
     const variants = names(resouceName);
     const summary = `Find one ${variants.kebabCase} by id`;
     const path = `${variants.kebabCase}/:id`;

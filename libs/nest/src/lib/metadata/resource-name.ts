@@ -1,32 +1,37 @@
-import { getResourceName as __getResourceName } from '@beenest/utils';
+import { inferResourceName } from '@beenest/utils';
 import { ExecutionContext, SetMetadata } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 
-export const RESOURCE_NAME_METADATA = Symbol('RESOURCE_NAME_METADATA');
+export const RESOURCE_NAME_METADATA_KEY = Symbol('RESOURCE_NAME_METADATA_KEY');
 
 /**
- * Set resource name
- * @param name resource name (optional)
+ * Set {@link resourceName } to {@link RESOURCE_NAME_METADATA_KEY}
+ *
+ * @group Metadata
  * @returns ClassDecorator
+ *
  */
-export function ResourceName(name?: string): ClassDecorator {
+export function ResourceName(resourceName?: string): ClassDecorator {
   return (...args) => {
-    name = name ?? args[0].name;
-    name = __getResourceName(name);
+    resourceName = resourceName ?? args[0].name;
+    resourceName = inferResourceName(resourceName);
 
-    SetMetadata(RESOURCE_NAME_METADATA, name)(...args);
+    SetMetadata(RESOURCE_NAME_METADATA_KEY, resourceName)(...args);
   };
 }
 
 /**
- * Get resource name from execution context
+ * Get {@link RESOURCE_NAME_METADATA_KEY} value from context
+ *
+ * @group Metadata
  * @param reflector Reflector
  * @param context ExecutionContext
- * @returns resource name
+ * @returns resource name if find, `undefined` otherwise
+ *
  */
 export function getResourceName(
   reflector: Reflector,
   context: ExecutionContext
 ) {
-  return reflector.get(RESOURCE_NAME_METADATA, context.getClass());
+  return reflector.get(RESOURCE_NAME_METADATA_KEY, context.getClass());
 }

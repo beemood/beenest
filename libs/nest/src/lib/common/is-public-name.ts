@@ -1,8 +1,13 @@
+export const PUBLIC_NAME_EXPRESSION = () => new RegExp(/public/, 'gi');
+
 /**
- * Check the name contains `public` or not.
+ * Check {@link name} includes `public` word or not (not case senstive)
+ *
+ * @group common
  * @param name string
- * @returns boolean
+ * @returns `true` if the {@link name} includes `public`, `false` otherwise
+ *
  */
 export function isPublicName(name: string) {
-  return name.toLowerCase().includes('public');
+  return PUBLIC_NAME_EXPRESSION().test(name);
 }

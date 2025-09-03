@@ -1,7 +1,7 @@
 import { InvalidNameError } from '../../errors/errors.js';
-import { getOperationName, OperationNames } from './get-operation-name.js';
+import { inferOperationName, OperationNames } from './infer-operation-name.js';
 
-describe('getOperationName', () => {
+describe('inferOperationName', () => {
   describe('returns', () => {
     it.each`
       methodName      | operationName
@@ -20,9 +20,9 @@ describe('getOperationName', () => {
       ${'editMany'}   | ${OperationNames.UPDATE_MANY}
       ${'changeMany'} | ${OperationNames.UPDATE_MANY}
     `(
-      `getOperationName($methodName) should return $operationName`,
+      `inferOperationName($methodName) should return $operationName`,
       ({ methodName, operationName }) => {
-        expect(getOperationName(methodName)).toEqual(operationName);
+        expect(inferOperationName(methodName)).toEqual(operationName);
       }
     );
   });
@@ -39,9 +39,9 @@ describe('getOperationName', () => {
       ${'delete'}     | ${InvalidNameError}
       ${'put'}        | ${InvalidNameError}
     `(
-      `getOperationName($methodName) should throw $error`,
+      `inferOperationName($methodName) should throw $error`,
       ({ methodName, error }) => {
-        expect(() => getOperationName(methodName)).toThrow(error);
+        expect(() => inferOperationName(methodName)).toThrow(error);
       }
     );
   });

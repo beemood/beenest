@@ -1,8 +1,13 @@
+export const SECURED_NAME_EXPRESSION = () => new RegExp(/secured/, 'gi');
+
 /**
- * Check the name contains `secured` or not.
+ * Check {@link name} includes `secured` word or not (not case senstive)
+ *
+ * @group common
  * @param name string
- * @returns boolean
+ * @returns `true` if the {@link name} includes `secured`, `false` otherwise
+ *
  */
 export function isSecuredName(name: string) {
-  return name.toLowerCase().includes('secured');
+  return SECURED_NAME_EXPRESSION().test(name);
 }

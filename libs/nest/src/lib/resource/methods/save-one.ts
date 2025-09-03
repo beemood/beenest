@@ -1,4 +1,4 @@
-import { getResourceName, names, OperationNames } from '@beenest/utils';
+import { inferResourceName, names, OperationNames } from '@beenest/utils';
 import { Post } from '@nestjs/common';
 import { ApiOperation } from '@nestjs/swagger';
 import { OperationName } from '../../metadata/operation-name.js';
@@ -11,7 +11,7 @@ import { SelectParams } from '../swagger/select-params.js';
 export function SaveOne(): MethodDecorator {
   return (...args) => {
     const className = args[0].constructor.name;
-    const resouceName = getResourceName(className);
+    const resouceName = inferResourceName(className);
     const variants = names(resouceName);
     const path = `${variants.kebabCase}`;
     const summary = `Save one ${variants.kebabCase}`;

@@ -1,4 +1,6 @@
 import { InvalidNameError } from '../../errors/errors.js';
+import { createStartsWithFunction } from '../../func/create-starts-with-function.js';
+import { OPERATION_NAME_EXPRESSION } from './is-operation-name.js';
 
 export enum OperationNames {
   READ_ONE = 'READ_ONE',
@@ -12,12 +14,12 @@ export enum OperationNames {
 }
 
 /**
- * Infer {@link OperationNames} from {@link methodName}
+ * Infer {@link OperationNames} from {@link operationName}
  *
  * @group names
- * @param methodName Generally method name that {@link OperationNames} to be infered from
+ * @param operationName Generally method name that {@link OperationNames} to be infered from
  * @returns Infered operation name {@link OperationNames}
- * @throws Error {@link InvalidNameError} if not infered any {@link OperationNames} from {@link methodName}
+ * @throws Error {@link InvalidNameError} if not infered any {@link OperationNames} from {@link operationName}
  *
  * @example
  * ```ts
@@ -27,16 +29,8 @@ export enum OperationNames {
  *
  * ```
  */
-export function getOperationName(methodName: string): OperationNames {
-  // Check the method name starts with the prefix
-  const sw = (...prefixes: string[]) => {
-    for (const p of prefixes) {
-      if (methodName.toLowerCase().startsWith(p.toLowerCase())) {
-        return true;
-      }
-    }
-    return false;
-  };
+export function inferOperationName(operationName: string): OperationNames {
+  const sw = createStartsWithFunction(operationName);
 
   if (sw('findOne', 'readOne')) {
     return OperationNames.READ_ONE;
@@ -57,6 +51,6 @@ export function getOperationName(methodName: string): OperationNames {
   }
 
   throw new InvalidNameError(
-    `The method name, ${methodName}, does not match any operation name pattern!`
+    `The operation nmae, ${operationName}, is invalid. The operation name must match ${OPERATION_NAME_EXPRESSION()}`
   );
 }

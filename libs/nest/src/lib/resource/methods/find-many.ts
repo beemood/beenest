@@ -1,4 +1,4 @@
-import { getResourceName, OperationNames, pluralNames } from '@beenest/utils';
+import { inferResourceName, OperationNames, pluralNames } from '@beenest/utils';
 import { Get } from '@nestjs/common';
 import { ApiOperation } from '@nestjs/swagger';
 import { OperationName } from '../../metadata/operation-name.js';
@@ -14,7 +14,7 @@ import { WhereParams } from '../swagger/where-paramas.js';
 export function FindMany(): MethodDecorator {
   return (...args) => {
     const className = args[0].constructor.name;
-    const resouceName = getResourceName(className);
+    const resouceName = inferResourceName(className);
     const pluralVariants = pluralNames(resouceName);
     const summary = `Find many ${pluralVariants.kebabCase}`;
     const path = `${pluralVariants.kebabCase}`;

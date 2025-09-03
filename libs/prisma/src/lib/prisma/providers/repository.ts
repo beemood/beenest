@@ -1,4 +1,4 @@
-import { getResourceName, names } from '@beenest/utils';
+import { inferResourceName, names } from '@beenest/utils';
 import { Inject, Provider } from '@nestjs/common';
 import { getClientToken } from './client.js';
 
@@ -47,7 +47,7 @@ export function InjectRepository(
     if (resourceName) {
       Inject(getRepositoryToken(resourceName, datasourceName))(...args);
     } else {
-      resourceName = getResourceName(args[0].constructor.name);
+      resourceName = inferResourceName(args[0].constructor.name);
 
       Inject(
         getRepositoryToken(
