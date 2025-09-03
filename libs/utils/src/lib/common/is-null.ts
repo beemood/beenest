@@ -1,7 +1,7 @@
 /**
  * Check {@link someValue} is euqal to `null` ( someValue === `null` )
  *
- * @group common
+ * @group Common
  * @param someValue optional value
  * @returns `true` when {@link someValue} is `null` (`someValue === null`), `false` otherwise
  *

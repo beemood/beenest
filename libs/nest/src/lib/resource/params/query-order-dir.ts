@@ -1,7 +1,10 @@
 import { Query } from '@nestjs/common';
 /**
- * Order by field query param
+ * `orderDir` query parameter decorator to inject `orderDir` from request url
+ *
+ * @group Parameter Decorators
  * @returns ParameterDecorator
+ *
  */
 export function QueryOrderDir(): ParameterDecorator {
   return (...args) => {

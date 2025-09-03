@@ -3,7 +3,7 @@ export const PUBLIC_NAME_EXPRESSION = () => new RegExp(/public/, 'gi');
 /**
  * Check {@link name} includes `public` word or not (not case senstive)
  *
- * @group common
+ * @group Names
  * @param name string
  * @returns `true` if the {@link name} includes `public`, `false` otherwise
  *

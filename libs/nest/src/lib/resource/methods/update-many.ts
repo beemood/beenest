@@ -7,6 +7,8 @@ import { WhereParams } from '../swagger/where-paramas.js';
 
 /**
  * `PUT /plural-path`
+ *
+ * @group Method Decorators
  * @returns MethodDecorator
  */
 export function UpdateMany(): MethodDecorator {

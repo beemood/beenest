@@ -1,5 +1,10 @@
 import { ApiQuery } from '@nestjs/swagger';
-
+/**
+ * Swagger doc for `take` and `skip` query param
+ *
+ * @group Swagger
+ * @returns MethodDecorator
+ */
 export function PaginatorParams(): MethodDecorator {
   return (...args) => {
     ApiQuery({

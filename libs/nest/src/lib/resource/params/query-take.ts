@@ -1,8 +1,11 @@
 import { ParseIntPipe, Query } from '@nestjs/common';
 
 /**
- * Paginator take parameter
+ * `take` query parameter decorator to inject `take` from request url
+ *
+ * @group Parameter Decorators
  * @returns ParameterDecorator
+ *
  */
 export function QueryTake(): ParameterDecorator {
   return (...args) => {

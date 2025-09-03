@@ -6,6 +6,8 @@ import { WhereParams } from '../swagger/where-paramas.js';
 
 /**
  * `DELETE /plural-path`
+ *
+ * @group Method Decorators
  * @returns MethodDecorator
  */
 export function DeleteMany(): MethodDecorator {

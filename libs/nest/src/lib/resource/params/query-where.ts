@@ -1,10 +1,13 @@
 import { Query } from '@nestjs/common';
 /**
- * Query search parameter
+ * `where` query parameter decorator to inject `where` from request url
+ *
+ * @group Parameter Decorators
  * @returns ParameterDecorator
+ *
  */
 export function QuerySearch(): ParameterDecorator {
   return (...args) => {
-    Query('search')(...args);
+    Query('where')(...args);
   };
 }

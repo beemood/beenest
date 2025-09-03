@@ -1,7 +1,10 @@
 import { ParseIntPipe, Query } from '@nestjs/common';
 /**
- * Paginator skip parameter
+ * `skip` query parameter decorator to inject `skip` from request url
+ *
+ * @group Parameter Decorators
  * @returns ParameterDecorator
+ *
  */
 export function QuerySkip(): ParameterDecorator {
   return (...args) => {

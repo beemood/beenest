@@ -2,14 +2,16 @@ import {
   EmptyArrayError,
   EmptyStringError,
   isEmptyString,
-  parseJsonOrParam
+  parseJsonOrParam,
 } from '@beenest/utils';
 import z, { ZodBoolean } from 'zod';
 
 /**
- * Create boolean record schema from the given fields. ( accepts json value )s
+ * Create zod boolean record schema from the given fields. ( accepts json value )
+ *
+ * @group Zod
  * @param fields model fields
- * @returns Zod
+ * @returns Zod object scheme
  */
 export function createBooleanSchema<T extends object>(
   fields: (keyof T)[] & string[]

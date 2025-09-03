@@ -8,6 +8,7 @@ import { SecuredResource } from '../../metadata/secured.js';
 /**
  * Enhanced and featured resource controller decorator. Infers resoruce name, resource access policy by target class name, and set swagger metadata for the resouce.
  *
+ * @group Class Decorators
  * @returns ClassDecorator
  * @throws Error {@link inferResourceName}
  */

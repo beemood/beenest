@@ -6,6 +6,8 @@ import { SelectParams } from '../swagger/select-params.js';
 
 /**
  * `POST /singular-path`
+ *
+ * @group Method Decorators
  * @returns MethodDecorator
  */
 export function SaveOne(): MethodDecorator {

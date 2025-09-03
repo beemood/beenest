@@ -1,7 +1,7 @@
 /**
  * Check {@link someValue} is equal to `undefined` ( someValue === `undefined` )
  *
- * @group common
+ * @group Common
  * @param someValue optional value
  * @returns `true` when {@link someValue} is equal to `undefined` (`someValue === undefined`), `false` otherwise
  *

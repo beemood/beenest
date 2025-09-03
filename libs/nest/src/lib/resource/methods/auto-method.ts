@@ -8,7 +8,9 @@ import { UpdateMany } from './update-many.js';
 import { UpdateOneById } from './update-one-by-id.js';
 
 /**
- * Automatically infer the http method, path, and operation details.
+ * Infer method decorator and all configurations from resource name and method name
+ *
+ * @group Method Decorators
  * @returns MethodDecorator
  */
 export function AutoMethod(): MethodDecorator {

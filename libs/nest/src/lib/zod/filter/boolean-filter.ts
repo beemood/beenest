@@ -1,14 +1,22 @@
 import z from 'zod';
-
+/**
+ * @group Zod
+ */
 export const __BooleanFilterObject = {
   equal: z.boolean(),
 };
 
+/**
+ * @group Zod
+ */
 export const BooleanFilterObject = {
   ...__BooleanFilterObject,
   not: __BooleanFilterObject,
 };
 
+/**
+ * @group Zod
+ */
 export const BooleanFilterSchema = z
   .object(BooleanFilterObject)
   .partial()

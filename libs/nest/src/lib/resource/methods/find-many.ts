@@ -9,6 +9,8 @@ import { WhereParams } from '../swagger/where-paramas.js';
 
 /**
  * `GET /plural-path`
+ *
+ * @group Method Decorators
  * @returns MethodDecorator
  */
 export function FindMany(): MethodDecorator {

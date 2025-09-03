@@ -6,6 +6,8 @@ import { SelectParams } from '../swagger/select-params.js';
 
 /**
  * `PUT /singular-path/:id`
+ *
+ * @group Method Decorators
  * @returns MethodDecorator
  */
 export function UpdateOneById(): MethodDecorator {

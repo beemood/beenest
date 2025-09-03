@@ -1,8 +1,10 @@
 import { ApiQuery } from '@nestjs/swagger';
 
 /**
- * Optional select query params
- * @returns
+ * Swagger doc for `select`, `omit`, and `include` query param
+ *
+ * @group Swagger
+ * @returns MethodDecorator
  */
 export function SelectParams(): MethodDecorator {
   return (...args) => {

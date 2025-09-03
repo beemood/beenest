@@ -6,6 +6,8 @@ import { SelectParams } from '../swagger/select-params.js';
 
 /**
  * `POST /plural-path`
+ *
+ * @group Method Decorators
  * @returns MethodDecorator
  */
 export function SaveMany(): MethodDecorator {
