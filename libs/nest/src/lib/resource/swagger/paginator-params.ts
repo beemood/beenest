@@ -12,7 +12,7 @@ export function PaginatorParams(): MethodDecorator {
       description: 'Limit number of items',
       type: 'integer',
       minimum: 0,
-      default: 20,
+      default: 2,
       required: false,
     })(...args);
 
@@ -21,7 +21,7 @@ export function PaginatorParams(): MethodDecorator {
       description: 'Skip the number of items',
       type: 'integer',
       minimum: 0,
-      default: 20,
+      default: 1,
       required: false,
     })(...args);
   };
