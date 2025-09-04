@@ -1,6 +1,8 @@
 // @index(['./**/*.ts', '!./**/*.{spec,test}.ts'], f => `export * from '${f.path}.js'`)
 export * from './lib/common/is-public-name.js';
 export * from './lib/common/is-secured-name.js';
+export * from './lib/exceptions/normalize-prisma-error.js';
+export * from './lib/exceptions/zod-exception-filter.js';
 export * from './lib/metadata/operation-name.js';
 export * from './lib/metadata/public.js';
 export * from './lib/metadata/resource-name.js';
@@ -40,5 +42,7 @@ export * from './lib/zod/filter/string-filter.js';
 export * from './lib/zod/helpers/create-boolean-schema.js';
 export * from './lib/zod/helpers/create-enum-schema.js';
 export * from './lib/zod/helpers/create-order-by-schema.js';
+export * from './lib/zod/helpers/create-where-schema.js';
+export * from './lib/zod/helpers/pick-filter-schema.js';
 export * from './lib/zod/literals/literals.js';
 
