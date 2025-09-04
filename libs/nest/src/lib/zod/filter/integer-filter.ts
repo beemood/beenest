@@ -18,7 +18,7 @@ export const __IntegerFilterObject = {
  */
 export const IntegerFilterObject = {
   ...__IntegerFilterObject,
-  not: __IntegerFilterObject,
+  not: z.object(__IntegerFilterObject),
 };
 
 /**

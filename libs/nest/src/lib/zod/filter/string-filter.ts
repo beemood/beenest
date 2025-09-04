@@ -21,7 +21,7 @@ export const __StringFilterObject = {
  */
 export const StringFilterObject = {
   ...__StringFilterObject,
-  not: __StringFilterObject,
+  not: z.object(__StringFilterObject),
 };
 
 /**

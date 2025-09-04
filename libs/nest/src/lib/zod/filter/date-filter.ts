@@ -18,7 +18,7 @@ export const __DateFilterObject = {
  */
 export const DateFilterObject = {
   ...__DateFilterObject,
-  not: __DateFilterObject,
+  not: z.object(__DateFilterObject),
 };
 
 /**

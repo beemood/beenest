@@ -12,7 +12,7 @@ export const __BooleanFilterObject = {
  */
 export const BooleanFilterObject = {
   ...__BooleanFilterObject,
-  not: __BooleanFilterObject,
+  not: z.object(__BooleanFilterObject),
 };
 
 /**
