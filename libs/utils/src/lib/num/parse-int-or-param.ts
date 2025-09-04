@@ -1,11 +1,11 @@
 import { toParamFunction } from '../func/to-param-function.js';
 
 /**
- * Parse the {@link unkownValue} into integer or return it
+ * Parse {@link value} into integer or return it
  *
  * @group Number
- * @param unkownValue unkown value
- * @returns Integer value or the {@link unkownValue itself}
+ * @param value any value
+ * @returns Integer value or the {@link value itself}
  *
  * @example
  * ```ts
@@ -13,6 +13,11 @@ import { toParamFunction } from '../func/to-param-function.js';
  *    parseIntOrParam('1')     // returns: 1
  * ```
  */
-export function parseIntOrParam(unkownValue: unknown) {
-  return toParamFunction(parseInt)(unkownValue);
+export function parseIntOrParam(value: any) {
+  return toParamFunction(parseInt)(value);
 }
+
+/**
+ * @see {@link parseIntOrParam}
+ */
+export const parseIntOrReturn = parseIntOrParam;

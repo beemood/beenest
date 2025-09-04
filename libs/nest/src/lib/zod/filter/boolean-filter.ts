@@ -1,10 +1,11 @@
 import z from 'zod';
+import { booleanStringSchema } from '../literals/literals.js';
 
 /**
  * @group Zod
  */
 export const __BooleanFilterObject = {
-  equals: z.boolean(),
+  equals: booleanStringSchema(),
 };
 
 /**
@@ -22,3 +23,5 @@ export const BooleanFilterSchema = z
   .object(BooleanFilterObject)
   .partial()
   .optional();
+
+export type BooleanFilter = z.infer<typeof BooleanFilterSchema>;

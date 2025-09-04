@@ -2,16 +2,28 @@ import {
   EmptyArrayError,
   EmptyStringError,
   isEmptyString,
-  parseJsonOrParam,
+  parseJsonOrParam
 } from '@beenest/utils';
 import z, { ZodBoolean } from 'zod';
 
 /**
- * Create zod boolean record schema from the given fields. ( accepts json value )
+ * Create an object schema from {@link fields} that parses objects like `Record<string,boolean>`
  *
  * @group Zod
  * @param fields model fields
  * @returns Zod object scheme
+ *
+ * @example
+ *
+ * ```ts
+ *    const SelectCategorySchema = createBooleanSchema(['id', 'name'])
+ *
+ *    SelectCategorySchema.parse({ id: true })       // returns: { id: true}
+ *    SelectCategorySchema.parse('{ "id": true }')   // returns: { id: true}
+ *
+ *    SelectCategorySchema.parse('{ "id": 1 }')      // throws: ZodError
+ *
+ * ```
  */
 export function createBooleanSchema<T extends object>(
   fields: (keyof T)[] & string[]

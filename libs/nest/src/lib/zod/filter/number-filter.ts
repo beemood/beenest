@@ -1,15 +1,16 @@
 import z from 'zod';
+import { numberStringSchema } from '../literals/literals.js';
 /**
  * @group Zod
  */
 export const __NumberFilterObject = {
-  equals: z.number(),
-  in: z.number().array(),
-  notIn: z.number().array(),
-  lt: z.number(),
-  lte: z.number(),
-  gt: z.number(),
-  gte: z.number(),
+  equals: numberStringSchema(),
+  in: numberStringSchema().array(),
+  notIn: numberStringSchema().array(),
+  lt: numberStringSchema(),
+  lte: numberStringSchema(),
+  gt: numberStringSchema(),
+  gte: numberStringSchema(),
 };
 
 /**
@@ -27,3 +28,5 @@ export const NumberFilterSchema = z
   .object(NumberFilterObject)
   .partial()
   .optional();
+
+export type NumberFilter = z.infer<typeof NumberFilterSchema>;

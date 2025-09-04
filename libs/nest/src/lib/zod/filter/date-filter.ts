@@ -1,16 +1,17 @@
 import z from 'zod';
+import { dateSchema } from '../literals/literals.js';
 
 /**
  * @group Zod
  */
 export const __DateFilterObject = {
-  equals: z.iso.datetime(),
-  in: z.iso.datetime().array(),
-  notIn: z.iso.datetime().array(),
-  lt: z.iso.datetime(),
-  lte: z.iso.datetime(),
-  gt: z.iso.datetime(),
-  gte: z.iso.datetime(),
+  equals: dateSchema(),
+  in: dateSchema().array(),
+  notIn: dateSchema().array(),
+  lt: dateSchema(),
+  lte: dateSchema(),
+  gt: dateSchema(),
+  gte: dateSchema(),
 };
 
 /**
@@ -25,3 +26,5 @@ export const DateFilterObject = {
  * @group Zod
  */
 export const DateFilterSchema = z.object(DateFilterObject).partial().optional();
+
+export type DateFilter = z.infer<typeof DateFilterSchema>;

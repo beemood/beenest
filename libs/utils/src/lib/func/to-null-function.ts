@@ -15,10 +15,10 @@
  */
 export function toNullFunction<T extends (...args: any[]) => any>(
   anyFunction: T
-) {
-  return (param: Parameters<T>) => {
+): (...params: Parameters<T>) => ReturnType<T> | null {
+  return (...params: Parameters<T>) => {
     try {
-      return anyFunction(param);
+      return anyFunction(...params);
     } catch {
       return null;
     }

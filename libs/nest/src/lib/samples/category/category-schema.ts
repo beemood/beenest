@@ -6,7 +6,6 @@ import { IntegerFilterSchema } from '../../zod/filter/integer-filter.js';
 import { StringFilterSchema } from '../../zod/filter/string-filter.js';
 import { createBooleanSchema } from '../../zod/helpers/create-boolean-schema.js';
 import { createOrderBySchema } from '../../zod/helpers/create-order-by-schema.js';
-import { PageObject } from '../../zod/query/page-schema.js';
 
 export class CategorySchema {
   static readonly Fields = ['id', 'createdAt', 'name', 'active'];
@@ -44,7 +43,6 @@ export class CategorySchema {
 
   static readonly Query = z
     .object({
-      ...PageObject,
       select: this.SelectFields,
       omit: this.SelectFields,
       orderBy: this.OrderBy,

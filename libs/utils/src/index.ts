@@ -26,6 +26,7 @@ export * from './lib/names/to-sentence-case.js';
 export * from './lib/names/to-snake-case.js';
 export * from './lib/names/to-title-case.js';
 export * from './lib/num/parse-int-or-param.js';
+export * from './lib/num/parse-number-or-param.js';
 export * from './lib/object/is-empty-object.js';
 export * from './lib/object/is-object.js';
 export * from './lib/object/keys.js';

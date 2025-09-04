@@ -41,5 +41,4 @@ export * from './lib/zod/helpers/create-boolean-schema.js';
 export * from './lib/zod/helpers/create-enum-schema.js';
 export * from './lib/zod/helpers/create-order-by-schema.js';
 export * from './lib/zod/literals/literals.js';
-export * from './lib/zod/query/page-schema.js';
 

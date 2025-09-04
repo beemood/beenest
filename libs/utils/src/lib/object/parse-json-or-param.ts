@@ -15,6 +15,11 @@ import { toParamFunction } from '../func/to-param-function.js';
  *    parseJsonOrParam('')      // output: ''
  * ```
  */
-export function parseJsonOrParam(jsonValue: unknown) {
+export function parseJsonOrParam(jsonValue: any) {
   return toParamFunction(JSON.parse)(jsonValue);
 }
+
+/**
+ * @see {@link parseJsonOrParam}
+ */
+export const parseJsonOrReturn = parseJsonOrParam;

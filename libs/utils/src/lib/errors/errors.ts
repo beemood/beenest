@@ -64,3 +64,12 @@ export class NullError extends BaseError {
     super(message, NullError.name, context);
   }
 }
+
+/**
+ * @group Errors
+ */
+export class NotSupportedError extends BaseError {
+  constructor(message = 'Error Message', context = 'error') {
+    super(message, NotSupportedError.name, context);
+  }
+}

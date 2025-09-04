@@ -1,19 +1,20 @@
 import z from 'zod';
+import { stringSchema } from '../literals/literals.js';
 
 /**
  * @group Zod
  */
 export const __StringFilterObject = {
-  equals: z.string(),
-  in: z.string().array(),
-  notIn: z.string().array(),
-  lt: z.string(),
-  lte: z.string(),
-  gt: z.string(),
-  gte: z.string(),
-  contains: z.string(),
-  startsWith: z.string(),
-  endsWith: z.string(),
+  equals: stringSchema(),
+  in: stringSchema().array(),
+  notIn: stringSchema().array(),
+  lt: stringSchema(),
+  lte: stringSchema(),
+  gt: stringSchema(),
+  gte: stringSchema(),
+  contains: stringSchema(),
+  startsWith: stringSchema(),
+  endsWith: stringSchema(),
 };
 
 /**
@@ -31,3 +32,5 @@ export const StringFilterSchema = z
   .object(StringFilterObject)
   .partial()
   .optional();
+
+export type StringFilter = z.infer<typeof StringFilterSchema>;

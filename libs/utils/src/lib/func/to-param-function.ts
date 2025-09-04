@@ -1,24 +1,31 @@
 /**
- * Wrap {@link anyFunction} with try-catch block and supress any error and return the parameters
+ * Wrap {@link throwingFunction} with try-catch block and supress any error and return the parameters
  *
- * @param anyFunction Function that might throw error
- * @param defaultReturnValue The default return value if {@link anyFunction} throws an error
+ * @param throwingFunction Function that might throw error
+ * @param defaultReturnValue The default return value if {@link throwingFunction} throws an error
  * @returns Function that returns `null` instead of throwing any error
  *
  * @example
  *
  * ```ts
- *    const anyFunction    = (someValue)=> throw Error();
- *    const newAnyFunction = toParamFunction(anyFunction)
- *    newAnyFunction('some param')  // output: 'some param'
+ *    const throwingFunction    = (someValue)=> throw Error();
+ *    const wrappedthrowingFunction = toParamFunction(throwingFunction)
+ *    wrappedthrowingFunction('some param')  // output: 'some param'
+ *    wrappedthrowingFunction('some', 'param')  // output: ['some', 'param']
  * ```
  */
-export function toParamFunction<T extends (param: any) => any>(anyFunction: T) {
-  return (param: any) => {
+export function toParamFunction<T extends (...params: any[]) => any>(
+  throwingFunction: T
+): (...params: Parameters<T>) => ReturnType<T> | Parameters<T> {
+  return (...params: Parameters<T>) => {
+    const isMultipleParam = params.length > 1;
     try {
-      return anyFunction(param);
+      return throwingFunction(...params);
     } catch {
-      return param;
+      if (isMultipleParam) {
+        return params;
+      }
+      return params[0];
     }
   };
 }
