@@ -1,5 +1,5 @@
 {
-  "version": "0.0.6",
+  "version": "0.0.7",
   "name": "@beenest/cli",
   "displayName": "Cli tool",
   "description": "Cli tool that provides generators",
