@@ -68,7 +68,7 @@ export function generateUpc(
  * Validates a 12-digit UPC-A code by recalculating its checksum.
  *
  * @param upcCode The 12-digit UPC-A code as a string.
- * @returns True if the code is numerically valid, false otherwise.
+ * @returns True if the code is numerically valid, throws {@link InvalidUpcError} otherwise.
  */
 export function validateUpc(upcCode: string): boolean {
   // A UPC-A code must be exactly 12 digits.

@@ -6,6 +6,7 @@ export * from './lib/common/is-null.js';
 export * from './lib/common/is-undefined.js';
 export * from './lib/errors/errors.js';
 export * from './lib/func/create-starts-with-function.js';
+export * from './lib/func/to-boolean-function.js';
 export * from './lib/func/to-null-function.js';
 export * from './lib/func/to-param-function.js';
 export * from './lib/names/custom/infer-operation-name.js';

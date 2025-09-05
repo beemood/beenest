@@ -1,6 +1,5 @@
-import { nameSchema, positiveIntegerSchema, z } from '@beenest/zod';
+import { idObjectSchema, nameSchema } from '@beenest/zod';
 
-export const CategorySchema = z.object({
-  id: positiveIntegerSchema(),
-  name: nameSchema(),
+export const categorySchema = idObjectSchema.extend({
+  name: nameSchema,
 });

@@ -58,7 +58,7 @@ export function generateEanBarcode(): string {
  * @param barcode The 13-digit EAN-13 barcode string.
  * @returns True if the barcode is valid, false otherwise.
  */
-export function validateEan13Barcode(barcode: string): boolean {
+export function validateEan(barcode: string): boolean {
   if (!/^\d{13}$/.test(barcode)) {
     throw new InvalidBarcodeError('Must be a 13-digit string.');
   }

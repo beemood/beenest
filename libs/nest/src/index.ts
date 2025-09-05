@@ -33,15 +33,4 @@ export * from './lib/resource/swagger/order-by-params.js';
 export * from './lib/resource/swagger/paginator-params.js';
 export * from './lib/resource/swagger/select-params.js';
 export * from './lib/resource/swagger/where-paramas.js';
-export * from './lib/zod/filter/boolean-filter.js';
-export * from './lib/zod/filter/date-filter.js';
-export * from './lib/zod/filter/integer-filter.js';
-export * from './lib/zod/filter/number-filter.js';
-export * from './lib/zod/filter/string-filter.js';
-export * from './lib/zod/helpers/create-boolean-schema.js';
-export * from './lib/zod/helpers/create-enum-schema.js';
-export * from './lib/zod/helpers/create-order-by-schema.js';
-export * from './lib/zod/helpers/create-where-schema.js';
-export * from './lib/zod/helpers/pick-filter-schema.js';
-export * from './lib/zod/literals/literals.js';
 

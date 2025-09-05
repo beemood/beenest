@@ -1,7 +1,7 @@
 import { parseJsonOrReturn, toNullFunction } from '@beenest/utils';
 import z, { preprocess, ZodType } from 'zod';
 import { BooleanFilter } from '../prisma-filters/boolean-filter.js';
-import { DateFilter } from '../prisma-filters/date-filter.js';
+import { DateTimeFilter } from '../prisma-filters/date-time-filter.js';
 import { IntegerFilter } from '../prisma-filters/integer-filter.js';
 import { NumberFilter } from '../prisma-filters/number-filter.js';
 import { StringFilter } from '../prisma-filters/string-filter.js';
@@ -33,13 +33,12 @@ export function createWhereSchema<T extends Record<string, ZodType>>(
         whereObject as Record<
           string,
           | StringFilter
+          | DateTimeFilter
           | NumberFilter
           | IntegerFilter
           | BooleanFilter
-          | DateFilter
         >
       )
       .partial()
-      .optional()
   );
 }

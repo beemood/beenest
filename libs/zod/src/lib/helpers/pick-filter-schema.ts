@@ -1,7 +1,7 @@
 import { NotSupportedError } from '@beenest/utils';
 import { ZodType } from 'zod';
 import { booleanFilterSchema } from '../prisma-filters/boolean-filter.js';
-import { dateFilterSchema } from '../prisma-filters/date-filter.js';
+import { dateFilterSchema } from '../prisma-filters/date-time-filter.js';
 import { integerFilterSchema } from '../prisma-filters/integer-filter.js';
 import { numberFilterSchema } from '../prisma-filters/number-filter.js';
 import { stringFilterSchema } from '../prisma-filters/string-filter.js';

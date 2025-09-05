@@ -1,5 +1,5 @@
 import z from 'zod';
-import { dateFilterSchema } from '../prisma-filters/date-filter.js';
+import { dateFilterSchema } from '../prisma-filters/date-time-filter.js';
 import { numberFilterSchema } from '../prisma-filters/number-filter.js';
 import { stringFilterSchema } from '../prisma-filters/string-filter.js';
 import { pickFilterSchema } from './pick-filter-schema.js';

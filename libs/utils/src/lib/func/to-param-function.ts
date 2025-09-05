@@ -2,15 +2,14 @@
  * Wrap {@link throwingFunction} with try-catch block and supress any error and return the parameters
  *
  * @param throwingFunction Function that might throw error
- * @param defaultReturnValue The default return value if {@link throwingFunction} throws an error
- * @returns Function that returns `null` instead of throwing any error
+ * @returns Function that returns `params` instead of throwing any error
  *
  * @example
  *
  * ```ts
  *    const throwingFunction    = (someValue)=> throw Error();
  *    const wrappedthrowingFunction = toParamFunction(throwingFunction)
- *    wrappedthrowingFunction('some param')  // output: 'some param'
+ *    wrappedthrowingFunction('some param')     // output: 'some param'
  *    wrappedthrowingFunction('some', 'param')  // output: ['some', 'param']
  * ```
  */

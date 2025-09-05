@@ -5,10 +5,7 @@
 
 import { describe, expect, test } from 'vitest';
 import { InvalidBarcodeError } from '../errors/errors.js';
-import {
-  generateEanBarcode,
-  validateEan13Barcode,
-} from './generate-ean-barcode.js';
+import { generateEanBarcode, validateEan } from './generate-ean-barcode.js';
 
 // Note: The calculateEan13Checksum function is not exported, so we will test its
 // behavior indirectly via the public `validateEan13Barcode` function.
@@ -22,13 +19,13 @@ describe('generateValidEan13Barcode', () => {
 
   test('should generate a valid EAN-13 barcode', () => {
     const barcode = generateEanBarcode();
-    expect(validateEan13Barcode(barcode)).toBe(true);
+    expect(validateEan(barcode)).toBe(true);
   });
 
   test('should generate 100 valid barcodes consecutively', () => {
     for (let i = 0; i < 100; i++) {
       const barcode = generateEanBarcode();
-      expect(validateEan13Barcode(barcode)).toBe(true);
+      expect(validateEan(barcode)).toBe(true);
     }
   });
 });
@@ -48,13 +45,13 @@ describe('validateEan13Barcode', () => {
     // checksum = 10 - (92%10) = 10 - 2 = 8
     // So valid barcode is 7062461803258
     const knownValidBarcode = '7062461803258';
-    expect(validateEan13Barcode(knownValidBarcode)).toBe(true);
+    expect(validateEan(knownValidBarcode)).toBe(true);
   });
 
   test('should return false for a known invalid EAN-13 barcode (incorrect checksum)', () => {
     // The first 12 digits are from the previous test, but the last digit is incorrect.
     const knownInvalidBarcode = '7062461803250'; // Checksum should be 8, not 0
-    expect(() => validateEan13Barcode(knownInvalidBarcode)).toThrowError(
+    expect(() => validateEan(knownInvalidBarcode)).toThrowError(
       InvalidBarcodeError
     );
   });
@@ -62,18 +59,12 @@ describe('validateEan13Barcode', () => {
   test('should return false for a barcode with incorrect length', () => {
     const shortBarcode = '12345';
     const longBarcode = '12345678901234';
-    expect(() => validateEan13Barcode(shortBarcode)).toThrowError(
-      InvalidBarcodeError
-    );
-    expect(() => validateEan13Barcode(longBarcode)).toThrowError(
-      InvalidBarcodeError
-    );
+    expect(() => validateEan(shortBarcode)).toThrowError(InvalidBarcodeError);
+    expect(() => validateEan(longBarcode)).toThrowError(InvalidBarcodeError);
   });
 
   test('should return false for a non-numeric barcode', () => {
     const alphaBarcode = '12345abcde678';
-    expect(() => validateEan13Barcode(alphaBarcode)).toThrow(
-      InvalidBarcodeError
-    );
+    expect(() => validateEan(alphaBarcode)).toThrow(InvalidBarcodeError);
   });
 });
