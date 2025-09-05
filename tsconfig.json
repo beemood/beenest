@@ -14,6 +14,9 @@
     },
     {
       "path": "./libs/nest"
+    },
+    {
+      "path": "./apps/inventory"
     }
   ]
 }

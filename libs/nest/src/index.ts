@@ -1,4 +1,6 @@
 // @index(['./**/*.ts', '!./**/*.{spec,test}.ts'], f => `export * from '${f.path}.js'`)
+export * from './lib/bootstrap/bootstrap.js';
+export * from './lib/bootstrap/common.module.js';
 export * from './lib/common/is-public-name.js';
 export * from './lib/common/is-secured-name.js';
 export * from './lib/exceptions/normalize-prisma-error.js';
