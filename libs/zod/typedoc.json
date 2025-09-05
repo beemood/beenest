@@ -1,0 +1,6 @@
+{
+  "name": "Zod",
+  "entryPoints": ["./src/index.ts"],
+  "favicon": "./favicon.png",
+  "out": "../../public/libs/zod"
+}

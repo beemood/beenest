@@ -120,6 +120,9 @@ importers:
       '@beenest/prisma':
         specifier: workspace:*
         version: link:../../libs/prisma
+      '@beenest/zod':
+        specifier: workspace:*
+        version: link:../../libs/zod
       '@nestjs/common':
         specifier: ^11.1.6
         version: 11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -150,6 +153,9 @@ importers:
       helmet:
         specifier: ^8.1.0
         version: 8.1.0
+      zod:
+        specifier: ^4.1.5
+        version: 4.1.5
     devDependencies:
       '@nestjs/testing':
         specifier: ^11.1.6
@@ -237,6 +243,24 @@ importers:
       '@swc/helpers':
         specifier: ~0.5.11
         version: 0.5.17
+
+  libs/zod:
+    dependencies:
+      '@beenest/utils':
+        specifier: workspace:*
+        version: link:../utils
+      '@nestjs/common':
+        specifier: ^11.1.6
+        version: 11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/config':
+        specifier: ^4.0.2
+        version: 4.0.2(@nestjs/common@11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@swc/helpers':
+        specifier: ~0.5.11
+        version: 0.5.17
+      zod:
+        specifier: ^4.1.5
+        version: 4.1.5
 
 packages:
 
@@ -8584,11 +8608,11 @@ snapshots:
 
   dotenv-expand@11.0.7:
     dependencies:
-      dotenv: 16.4.7
+      dotenv: 16.6.1
 
   dotenv-expand@12.0.1:
     dependencies:
-      dotenv: 16.4.7
+      dotenv: 16.6.1
 
   dotenv@16.4.7: {}
 

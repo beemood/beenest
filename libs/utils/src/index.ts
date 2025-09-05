@@ -1,4 +1,6 @@
 // @index(['./**/*.ts', '!./**/*.{spec,test}.ts'], f => `export * from '${f.path}.js'`)
+export * from './lib/barcode/generate-ean-barcode.js';
+export * from './lib/barcode/generate-upc.js';
 export * from './lib/common/is-defined.js';
 export * from './lib/common/is-null.js';
 export * from './lib/common/is-undefined.js';

@@ -41,6 +41,24 @@ export class InvalidNameError extends BaseError {
 /**
  * @group Errors
  */
+export class InvalidBarcodeError extends BaseError {
+  constructor(message = 'Invalid barcode', context = 'string') {
+    super(message, InvalidBarcodeError.name, context);
+  }
+}
+
+/**
+ * @group Errors
+ */
+export class InvalidUpcError extends BaseError {
+  constructor(message = 'Invalid upc', context = 'string') {
+    super(message, InvalidUpcError.name, context);
+  }
+}
+
+/**
+ * @group Errors
+ */
 export class NotStringError extends BaseError {
   constructor(message = 'Value is not a type of string!', context = 'string') {
     super(message, NotStringError.name, context);

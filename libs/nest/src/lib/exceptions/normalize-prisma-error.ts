@@ -1,7 +1,10 @@
-import { UnprocessableEntityException } from '@nestjs/common';
+import {
+  InternalServerErrorException,
+  UnprocessableEntityException,
+} from '@nestjs/common';
 
 /**
- * Convert prisma errors into Nestjs exceptions and throw it.
+ * Convert prisma errors into nestjs exceptions and throw it.
  * @param error
  */
 export function normalizePrismaError(error: any) {
@@ -17,4 +20,5 @@ export function normalizePrismaError(error: any) {
       ],
     });
   }
+  throw new InternalServerErrorException('Unkown database operation error');
 }
