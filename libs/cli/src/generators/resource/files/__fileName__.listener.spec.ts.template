@@ -1,0 +1,13 @@
+import { <%- className %>Listener } from './<%- fileName  %>.listener.js';
+
+describe('<%- className %>EventListener', () => {
+  let eventListener: <%- className %>Listener;
+
+  beforeAll(() => {
+    eventListener = new <%- className %>Listener();
+  });
+  
+  it('should be defined', () => {
+    expect(eventListener).toBeDefined();
+  });
+});

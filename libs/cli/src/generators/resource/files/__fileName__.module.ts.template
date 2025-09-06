@@ -1,0 +1,11 @@
+import { PrismaModule } from '@beenest/prisma';
+import { Module } from '@nestjs/common';
+import { <%- className %>Controller } from './<%- fileName  %>.controller.js';
+import { <%- className %>Listener } from './<%- fileName  %>.listener.js';
+
+@Module({
+  imports: [PrismaModule.forFeature({ resourceNames: ['<%- propertyName  %>'] })],
+  controllers: [<%- className %>Controller],
+  providers: [<%- className %>Listener],
+})
+export class <%- className %>Module {}

@@ -1,0 +1,6 @@
+import { type z } from '@beenest/zod';
+import { create<%- className %>Schema } from './create-<%- fileName  %>.js';
+
+export const update<%- className %>Schema = create<%- className %>Schema.partial();
+
+export type Update<%- className %> = z.infer<typeof update<%- className %>Schema>;

@@ -1,0 +1,9 @@
+import { createOrderBySchema, z } from '@beenest/zod';
+
+export const orderBy<%- className %>Schema = z
+  .object({
+    orderBy: createOrderBySchema(['id', 'name']),
+  })
+  .partial();
+
+export type Order<%- className %> = z.infer<typeof orderBy<%- className %>Schema>;

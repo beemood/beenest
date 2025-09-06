@@ -1,0 +1,33 @@
+import {
+  EventListener,
+  OnEvent,
+  type ResourceEventPayload,
+} from '@beenest/nest';
+
+@EventListener()
+export class <%- className %>Listener {
+  @OnEvent()
+  onSaveOne(payload: ResourceEventPayload) {
+    console.log({ payload });
+  }
+
+  @OnEvent()
+  onDeleteOne(payload: any) {
+    console.log({ payload });
+  }
+
+  @OnEvent()
+  onUpdateOne(payload: any) {
+    console.log({ payload });
+  }
+
+  @OnEvent()
+  onFindMany(payload: any) {
+    console.log({ payload });
+  }
+
+  @OnEvent()
+  onFindOne(payload: any) {
+    console.log({ payload });
+  }
+}

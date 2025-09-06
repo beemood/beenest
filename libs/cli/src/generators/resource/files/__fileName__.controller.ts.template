@@ -1,0 +1,82 @@
+import { type Prisma } from '@beenest/inventory-db';
+import {
+  AutoMethod,
+  Body,
+  DeleteOneById,
+  FindOneById,
+  ParamId,
+  Query,
+  ResourceController,
+  UpdateOneById,
+} from '@beenest/nest';
+import { InjectRepository } from '@beenest/prisma';
+import { pageObjectSchema, type Page } from '@beenest/zod';
+import {
+  create<%- className %>Schema,
+  type Create<%- className %>,
+} from './schemas/create-<%- fileName  %>.js';
+import {
+  orderBy<%- className %>Schema,
+  type Order<%- className %>,
+} from './schemas/order-by-<%- fileName  %>.js';
+import {
+  select<%- className %>FieldsSchema,
+  type Select<%- className %>Fields,
+} from './schemas/select-<%- fileName  %>-fields.js';
+import {
+  update<%- className %>Schema,
+  type Update<%- className %>,
+} from './schemas/update-<%- fileName  %>.js';
+import {
+  where<%- className %>Schema,
+  type Where<%- className %>,
+} from './schemas/where-<%- fileName  %>.js';
+
+@ResourceController()
+export class <%- className %>Controller {
+  constructor(
+    @InjectRepository() protected readonly repo: Prisma.<%- className %>Delegate
+  ) {}
+
+  @AutoMethod()
+  async saveOne(
+    @Body(create<%- className %>Schema) data: Create<%- className %>,
+    @Query(select<%- className %>FieldsSchema) select: Select<%- className %>Fields
+  ) {
+    return await this.repo.create({ data, ...select });
+  }
+
+  @AutoMethod()
+  async findAll(
+    @Query(pageObjectSchema) page: Page,
+    @Query(select<%- className %>FieldsSchema) select: Select<%- className %>Fields,
+    @Query(orderBy<%- className %>Schema) orderBy: Order<%- className %>,
+    @Query(where<%- className %>Schema) where: Where<%- className %>
+  ) {
+    const query = { ...page, ...select, ...orderBy, ...where };
+    return await this.repo.findMany(query);
+  }
+
+  @FindOneById()
+  async findOneById(
+    @ParamId() id: number,
+    @Query(select<%- className %>FieldsSchema) select: Select<%- className %>Fields
+  ) {
+    return await this.repo.findUnique({ where: { id }, ...select });
+  }
+
+  @DeleteOneById()
+  async deleteOneById(@ParamId() id: number) {
+    return await this.repo.delete({ where: { id } });
+  }
+
+  @UpdateOneById()
+  async updateOneByID(
+    @ParamId() id: number,
+    @Body(update<%- className %>Schema) data: Update<%- className %>,
+    @Query(select<%- className %>FieldsSchema)
+    select: Select<%- className %>Fields
+  ) {
+    return await this.repo.update({ where: { id }, data, ...select });
+  }
+}

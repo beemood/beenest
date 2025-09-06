@@ -83,8 +83,8 @@
     }
   },
   "dependencies": {
-    "@beenest/utils": "workspace:*",
     "@nx/devkit": "21.4.1",
+    "@beenest/utils": "workspace:*",
     "tslib": "^2.3.0"
   },
   "generators": "./generators.json"

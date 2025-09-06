@@ -1,0 +1,12 @@
+import { type z } from '@beenest/zod';
+import { <%- propertyName  %>Schema } from './<%- fileName  %>.js';
+
+export const create<%- className %>Schema = <%- propertyName  %>Schema
+  .pick({
+    name: true,
+  })
+  .required({
+    name: true,
+  });
+
+export type Create<%- className %> = z.infer<typeof create<%- className %>Schema>;

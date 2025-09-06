@@ -112,6 +112,67 @@ importers:
         specifier: ^3.0.0
         version: 3.2.4(@types/node@20.19.9)(@vitest/ui@3.2.4)(jiti@2.4.2)(jsdom@22.1.0)(yaml@2.8.1)
 
+  apps/contact:
+    dependencies:
+      '@beenest/nest':
+        specifier: workspace:*
+        version: link:../../libs/nest
+      '@beenest/prisma':
+        specifier: workspace:*
+        version: link:../../libs/prisma
+      '@beenest/zod':
+        specifier: workspace:*
+        version: link:../../libs/zod
+      '@nestjs/common':
+        specifier: ^11.1.6
+        version: 11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/config':
+        specifier: ^4.0.2
+        version: 4.0.2(@nestjs/common@11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2))(rxjs@7.8.2)
+      '@nestjs/core':
+        specifier: ^11.1.6
+        version: 11.1.6(@nestjs/common@11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.6)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/event-emitter':
+        specifier: ^3.0.1
+        version: 3.0.1(@nestjs/common@11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)
+      '@nestjs/platform-express':
+        specifier: ^11.1.6
+        version: 11.1.6(@nestjs/common@11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)
+      '@nestjs/swagger':
+        specifier: ^11.2.0
+        version: 11.2.0(@nestjs/common@11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)(reflect-metadata@0.2.2)
+      '@nestjs/throttler':
+        specifier: ^6.4.0
+        version: 6.4.0(@nestjs/common@11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)(reflect-metadata@0.2.2)
+      '@prisma/client':
+        specifier: ^6.15.0
+        version: 6.15.0(prisma@6.15.0(magicast@0.3.5)(typescript@5.8.3))(typescript@5.8.3)
+      '@swc/helpers':
+        specifier: ~0.5.11
+        version: 0.5.17
+      helmet:
+        specifier: ^8.1.0
+        version: 8.1.0
+      rxjs:
+        specifier: ^7.8.2
+        version: 7.8.2
+      zod:
+        specifier: ^4.1.5
+        version: 4.1.5
+    devDependencies:
+      '@nestjs/testing':
+        specifier: ^11.1.6
+        version: 11.1.6(@nestjs/common@11.1.6(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.6)(@nestjs/platform-express@11.1.6)
+      '@types/multer':
+        specifier: ^2.0.0
+        version: 2.0.0
+      nodemon:
+        specifier: ^3.1.10
+        version: 3.1.10
+      prisma:
+        specifier: ^6.15.0
+        version: 6.15.0(magicast@0.3.5)(typescript@5.8.3)
+
   apps/inventory:
     dependencies:
       '@beenest/nest':
