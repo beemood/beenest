@@ -1,0 +1,8 @@
+import { CommonModule } from '@beenest/nest';
+import { Module } from '@nestjs/common';
+import { <%- className %>Module } from './<%- fileName %>.module.js';
+
+@Module({
+  imports: [CommonModule, <%- className %>Module],
+})
+export class AppModule {}

@@ -1,0 +1,107 @@
+{
+  "version": "<%- mp.version %>",
+  "name": "<%- fullProjectName %>",
+  "displayName": "<%- titleCase %>",
+  "description": "<%- titleCase %>",
+  "license": "MIT",
+  "keywords": [
+    "beenest"
+  ],
+  "homepage": "<%- mp.homepage %>/<%- directory %>",
+  "icon": "<%- mp.homepage %>/<%- directory %>/assets/favicon.png",
+  "author": <%- JSON.stringify(mp.author) %>,
+  "funding": <%- JSON.stringify(mp.funding) %>,
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "bugs": <%- JSON.stringify(mp.bugs) %>,
+  "sponsor": <%- JSON.stringify(mp.sponsor) %>,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "nx": {
+    "sourceRoot": "<%- directory  %>/src",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:swc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "<%- directory  %>/dist",
+          "main": "<%- directory  %>/src/index.ts",
+          "tsConfig": "<%- directory  %>/tsconfig.lib.json",
+          "skipTypeCheck": false,
+          "stripLeadingPaths": true
+        }
+      },
+      "doc": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            "npx typedoc"
+          ],
+          "cwd": "{projectRoot}"
+        }
+      },
+      "serve": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            "npx nx build inventory --watch",
+            "nodemon"
+          ],
+          "cwd": "{projectRoot}",
+          "parallel": true
+        }
+      },
+      "serve-static": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            "nodemon"
+          ],
+          "cwd": "{projectRoot}"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@beenest/nest": "workspace:*",
+    "@beenest/prisma": "workspace:*",
+    "@beenest/zod": "workspace:*",
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.1.6",
+    "@nestjs/event-emitter": "^3.0.1",
+    "@nestjs/platform-express": "^11.1.6",
+    "@nestjs/swagger": "^11.2.0",
+    "@nestjs/throttler": "^6.4.0",
+    "@prisma/client": "^6.15.0",
+    "@swc/helpers": "~0.5.11",
+    "helmet": "^8.1.0",
+    "rxjs": "^7.8.2",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^11.1.6",
+    "@types/multer": "^2.0.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.15.0"
+  }
+}
