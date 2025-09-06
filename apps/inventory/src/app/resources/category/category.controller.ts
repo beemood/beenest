@@ -11,8 +11,6 @@ import {
 } from '@beenest/nest';
 import { InjectRepository } from '@beenest/prisma';
 import { pageObjectSchema, type Page } from '@beenest/zod';
-import { Inject } from '@nestjs/common';
-import { EventEmitter2 } from '@nestjs/event-emitter';
 import {
   createCategorySchema,
   type CreateCategory,
@@ -26,6 +24,10 @@ import {
   type SelectCategoryFields,
 } from './schemas/select-category-fields.js';
 import {
+  updateCategorySchema,
+  type UpdateCategory,
+} from './schemas/update-category.js';
+import {
   whereCategorySchema,
   type WhereCategory,
 } from './schemas/where-category.js';
@@ -33,8 +35,7 @@ import {
 @ResourceController()
 export class CategoryController {
   constructor(
-    @InjectRepository() protected readonly repo: Prisma.CategoryDelegate,
-    @Inject(EventEmitter2) public readonly emitter: EventEmitter2
+    @InjectRepository() protected readonly repo: Prisma.CategoryDelegate
   ) {}
 
   @AutoMethod()
@@ -42,7 +43,6 @@ export class CategoryController {
     @Body(createCategorySchema) data: CreateCategory,
     @Query(selectCategoryFieldsSchema) select: SelectCategoryFields
   ) {
-    await this.emitter.emitAsync('category.save', { data, select });
     return await this.repo.create({ data, ...select });
   }
 
@@ -53,12 +53,8 @@ export class CategoryController {
     @Query(orderByCategorySchema) orderBy: OrderCategory,
     @Query(whereCategorySchema) where: WhereCategory
   ) {
-    return await this.repo.findMany({
-      ...page,
-      ...select,
-      ...orderBy,
-      ...where,
-    });
+    const query = { ...page, ...select, ...orderBy, ...where };
+    return await this.repo.findMany(query);
   }
 
   @FindOneById()
@@ -77,9 +73,10 @@ export class CategoryController {
   @UpdateOneById()
   async updateOneByID(
     @ParamId() id: number,
+    @Body(updateCategorySchema) data: UpdateCategory,
     @Query(selectCategoryFieldsSchema)
     select: SelectCategoryFields
   ) {
-    return await this.repo.delete({ where: { id }, ...select });
+    return await this.repo.update({ where: { id }, data, ...select });
   }
 }
