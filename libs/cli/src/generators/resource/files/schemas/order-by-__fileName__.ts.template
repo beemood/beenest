@@ -1,8 +1,9 @@
 import { createOrderBySchema, z } from '@beenest/zod';
+import { <%- propertyName %>Fields } from './<%- fileName %>.js'; 
 
 export const orderBy<%- className %>Schema = z
   .object({
-    orderBy: createOrderBySchema(['id', 'name']),
+    orderBy: createOrderBySchema(<%- propertyName %>Fields)
   })
   .partial();
 

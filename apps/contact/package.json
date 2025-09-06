@@ -93,7 +93,7 @@
         "executor": "nx:run-commands",
         "options": {
           "commands": [
-            "npx prisma migrate reset"
+            "npx prisma migrate reset --force"
           ],
           "cwd": "{projectRoot}"
         }

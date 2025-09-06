@@ -1,9 +1,10 @@
 import { createBooleanSchema, z } from '@beenest/zod';
+import { <%- propertyName %>Fields } from './<%- fileName %>.js'; 
 
 export const select<%- className %>FieldsSchema = z
   .object({
-    select: createBooleanSchema(['id', ' name']),
-    omit: createBooleanSchema(['id', ' name']),
+    select: createBooleanSchema(<%- propertyName %>Fields),
+    omit: createBooleanSchema(<%- propertyName %>Fields),
   })
   .partial();
 

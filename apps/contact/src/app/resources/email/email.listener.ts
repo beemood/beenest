@@ -5,7 +5,7 @@ import {
 } from '@beenest/nest';
 
 @EventListener()
-export class <%- className %>Listener {
+export class EmailListener {
   @OnEvent()
   onSaveOne(payload: ResourceEventPayload) {
     console.log({ payload });

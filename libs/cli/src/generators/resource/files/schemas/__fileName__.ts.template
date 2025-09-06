@@ -1,13 +1,11 @@
-import { idObjectSchema, idSchema, nameSchema, z } from '@beenest/zod';
+import { idObjectSchema, nameSchema, type z } from '@beenest/zod';
 
 export const <%- propertyName  %>Object = {
-  id: idSchema,
   name: nameSchema,
 };
 
-export const <%- propertyName  %>Schema = idObjectSchema
-  .extend({
-    name: nameSchema,
-  })
+export const <%- propertyName %>Fields = ['id', 'name'];
+
+export const <%- propertyName  %>Schema = idObjectSchema.extend(<%- propertyName  %>Object )
 
 export type <%- className %> = z.infer<typeof <%- propertyName  %>Schema>;
