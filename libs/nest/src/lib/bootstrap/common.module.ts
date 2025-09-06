@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { APP_GUARD } from '@nestjs/core';
+import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { ResourceEventInterceptor } from '../events/resource-event-interceptor.js';
 
 /**
  * Inclues common modules such as ConfigModule, EventEmitterModule, ThrottlerModule.
@@ -27,6 +28,11 @@ import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
       provide: APP_GUARD,
       useClass: ThrottlerGuard,
     },
+
+    { 
+      provide:APP_INTERCEPTOR, 
+      useClass:ResourceEventInterceptor
+    }
   ],
   exports: [ConfigModule, EventEmitterModule, ThrottlerModule],
 })

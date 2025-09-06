@@ -5,6 +5,7 @@ export * from './lib/common/is-public-name.js';
 export * from './lib/common/is-secured-name.js';
 export * from './lib/events/event-listener.js';
 export * from './lib/events/on-event.js';
+export * from './lib/events/resource-event-interceptor.js';
 export * from './lib/exceptions/common-exception-filter.js';
 export * from './lib/exceptions/normalize-prisma-error.js';
 export * from './lib/exceptions/normalize-zod-error.js';

@@ -16,6 +16,11 @@ export function isOperationName(operationName: string) {
   return OPERATION_NAME_EXPRESSION().test(operationName);
 }
 
+/**
+ *
+ * @param operationName
+ * @returns
+ */
 export function isOperationNameOrThrow(operationName: string) {
   if (isOperationName(operationName)) {
     return true;

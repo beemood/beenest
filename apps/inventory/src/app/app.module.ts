@@ -4,5 +4,6 @@ import { InventoryModule } from './inventory.module.js';
 
 @Module({
   imports: [CommonModule, InventoryModule],
+  providers: [],
 })
 export class AppModule {}

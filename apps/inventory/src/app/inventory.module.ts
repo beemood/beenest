@@ -1,3 +1,4 @@
+import { PrismaClient } from '@beenest/inventory-db';
 import { PrismaModule } from '@beenest/prisma';
 import { Module } from '@nestjs/common';
 import { CategoryModule } from './resources/category/category.module.js';
@@ -6,18 +7,7 @@ import { CategoryModule } from './resources/category/category.module.js';
   imports: [
     CategoryModule,
     PrismaModule.forRoot({
-      clientInstance: {
-        category: {
-          findMany() {
-            return [
-              {
-                id: 1,
-                name: 'Mocked category',
-              },
-            ];
-          },
-        },
-      },
+      clientInstance: new PrismaClient(),
     }),
   ],
 })

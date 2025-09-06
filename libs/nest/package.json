@@ -74,15 +74,16 @@
   "peerDependencies": {
     "@nestjs/common": "^11.1.6",
     "@nestjs/core": "^11.1.6",
-    "@nestjs/swagger": "^11.2.0",
-    "zod": "^4.1.5",
     "@nestjs/event-emitter": "^3.0.1",
+    "@nestjs/swagger": "^11.2.0",
     "@nestjs/throttler": "^6.4.0",
-    "helmet": "^8.1.0"
+    "helmet": "^8.1.0",
+    "zod": "^4.1.5"
   },
   "dependencies": {
     "@beenest/utils": "workspace:*",
-    "@swc/helpers": "~0.5.11"
+    "@swc/helpers": "~0.5.11",
+    "rxjs": "^7.8.2"
   },
   "devDependencies": {
     "@nestjs/testing": "^11.1.6",

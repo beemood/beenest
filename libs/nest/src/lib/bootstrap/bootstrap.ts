@@ -5,12 +5,6 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import helmet from 'helmet';
 
-// export type IEntryNestModule =
-//   | Type<any>
-//   | DynamicModule
-//   | ForwardReference
-//   | Promise<IEntryNestModule>;
-
 export async function bootstrap(module: Type) {
   const app = await NestFactory.create(module);
 
@@ -38,5 +32,5 @@ export async function bootstrap(module: Type) {
 
   await app.listen(PORT);
 
-  Logger.log(`App is up at ${await app.getUrl()}`);
+  Logger.log(`App is up at ${await app.getUrl()}`, 'Bootstrap');
 }

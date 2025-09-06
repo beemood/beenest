@@ -1,11 +1,11 @@
 import { PrismaModule } from '@beenest/prisma';
 import { Module } from '@nestjs/common';
-import { CategoryEventListener } from './category-event.listener.js';
 import { CategoryController } from './category.controller.js';
+import { CategoryListener } from './category.listener.js';
 
 @Module({
   imports: [PrismaModule.forFeature({ resourceNames: ['category'] })],
   controllers: [CategoryController],
-  providers: [CategoryEventListener],
+  providers: [CategoryListener],
 })
 export class CategoryModule {}

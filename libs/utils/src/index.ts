@@ -11,6 +11,7 @@ export * from './lib/func/to-boolean-function.js';
 export * from './lib/func/to-null-function.js';
 export * from './lib/func/to-param-function.js';
 export * from './lib/names/custom/infer-operation-name.js';
+export * from './lib/names/custom/infer-resource-event-name.js';
 export * from './lib/names/custom/infer-resource-name.js';
 export * from './lib/names/custom/is-operation-name.js';
 export * from './lib/names/custom/is-resource-name.js';

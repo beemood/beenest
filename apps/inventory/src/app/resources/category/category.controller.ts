@@ -1,11 +1,13 @@
+import { type Prisma } from '@beenest/inventory-db';
 import {
   AutoMethod,
   Body,
   DeleteOneById,
   FindOneById,
-  ParamId, Query,
+  ParamId,
+  Query,
   ResourceController,
-  UpdateOneById
+  UpdateOneById,
 } from '@beenest/nest';
 import { InjectRepository } from '@beenest/prisma';
 import { pageObjectSchema, type Page } from '@beenest/zod';
@@ -31,41 +33,53 @@ import {
 @ResourceController()
 export class CategoryController {
   constructor(
-    @InjectRepository() protected readonly repo: any,
+    @InjectRepository() protected readonly repo: Prisma.CategoryDelegate,
     @Inject(EventEmitter2) public readonly emitter: EventEmitter2
   ) {}
 
   @AutoMethod()
-  saveOne(
-    @Body(createCategorySchema) body: CreateCategory,
+  async saveOne(
+    @Body(createCategorySchema) data: CreateCategory,
     @Query(selectCategoryFieldsSchema) select: SelectCategoryFields
   ) {
-    return { body, select };
+    await this.emitter.emitAsync('category.save', { data, select });
+    return await this.repo.create({ data, ...select });
   }
 
   @AutoMethod()
-  findAll(
+  async findAll(
     @Query(pageObjectSchema) page: Page,
     @Query(selectCategoryFieldsSchema) select: SelectCategoryFields,
     @Query(orderByCategorySchema) orderBy: OrderCategory,
     @Query(whereCategorySchema) where: WhereCategory
   ) {
-    this.emitter.emit('category.findMany', { page, select, orderBy, where });
-    return { page, select, orderBy, where };
+    return await this.repo.findMany({
+      ...page,
+      ...select,
+      ...orderBy,
+      ...where,
+    });
   }
 
   @FindOneById()
-  findOneById(@ParamId() id: number) {
-    return { id };
+  async findOneById(
+    @ParamId() id: number,
+    @Query(selectCategoryFieldsSchema) select: SelectCategoryFields
+  ) {
+    return await this.repo.findUnique({ where: { id }, ...select });
   }
 
   @DeleteOneById()
-  deleteOneById(@ParamId() id: number) {
-    return { id };
+  async deleteOneById(@ParamId() id: number) {
+    return await this.repo.delete({ where: { id } });
   }
 
   @UpdateOneById()
-  updateOneByID(@ParamId() id: number) {
-    return { id };
+  async updateOneByID(
+    @ParamId() id: number,
+    @Query(selectCategoryFieldsSchema)
+    select: SelectCategoryFields
+  ) {
+    return await this.repo.delete({ where: { id }, ...select });
   }
 }
