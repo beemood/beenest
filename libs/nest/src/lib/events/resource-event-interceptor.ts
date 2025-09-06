@@ -14,6 +14,21 @@ import { EventEmitter2 } from '@nestjs/event-emitter';
 import { tap } from 'rxjs';
 import { v4 } from 'uuid';
 
+export type ResourceEventPayload = {
+  operationId: string;
+  resouceName: string;
+  operationName: string;
+  eventName: string;
+  request: {
+    body: object;
+    query: object;
+    params: object;
+  };
+  response?: {
+    body: object;
+  };
+};
+
 @Injectable()
 export class ResourceEventInterceptor implements NestInterceptor {
   constructor(
@@ -31,7 +46,7 @@ export class ResourceEventInterceptor implements NestInterceptor {
 
     const operationId = v4();
 
-    const requestPayload = {
+    const requestPayload: ResourceEventPayload = {
       operationId,
       resouceName,
       operationName,
