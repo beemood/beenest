@@ -7,3 +7,6 @@ export const timestampObjectSchema = z.object({
   updatedAt: z.iso.datetime(),
   deletedAt: z.iso.datetime().optional(),
 });
+
+
+export type Timestamp = z.infer<typeof timestampObjectSchema>;

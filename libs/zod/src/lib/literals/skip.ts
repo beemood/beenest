@@ -7,4 +7,5 @@ export const skipSchema = positiveIntegerSchema
     id: 'skip',
     description: 'Skip the number of items from result',
     title: 'Skip',
-  });
+  })
+  .default(0);

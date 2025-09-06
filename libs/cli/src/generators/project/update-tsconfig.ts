@@ -1,4 +1,4 @@
-import { Tree, updateJson } from '@nx/devkit';
+import { type Tree, updateJson } from '@nx/devkit';
 
 export function updateTsconfigReference(tree: Tree, directory: string) {
   updateJson(tree, 'tsconfig.json', (value) => {

@@ -1,5 +1,5 @@
 import { parseJsonOrParam } from '@beenest/utils';
-import z, { ZodLiteral } from 'zod';
+import z, { type ZodLiteral } from 'zod';
 /**
  * Create an object schema from the {@link fields} and {@link enums} that parses object like Record<fieldsType, enumdsType>
  *
@@ -34,6 +34,5 @@ export function createEnumSchema<T extends object, L extends string>(
         }, {}),
       } as Record<keyof T, ZodLiteral<L>>)
       .partial()
-      .optional()
   );
 }

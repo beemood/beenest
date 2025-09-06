@@ -1,4 +1,4 @@
-import { ProjectType } from './schema';
+import { type ProjectType } from './schema';
 
 export type NormalizedProjectGeneratorSchema = {
   type: ProjectType;

@@ -1,5 +1,5 @@
-import { formatFiles, generateFiles, readJsonFile, Tree } from '@nx/devkit';
-import { ProjectGeneratorSchema } from './schema';
+import { formatFiles, generateFiles, readJsonFile, type Tree } from '@nx/devkit';
+import { type ProjectGeneratorSchema } from './schema';
 import { names } from '@beenest/utils';
 import { normalizeProjectGeneratorSchema } from './normalize-schema';
 import { updateTsconfigReference } from './update-tsconfig';

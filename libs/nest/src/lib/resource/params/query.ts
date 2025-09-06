@@ -1,5 +1,5 @@
 import { Query as __Query } from '@nestjs/common';
-import { ZodType } from 'zod';
+import { type ZodType } from 'zod';
 /**
  * Inject request query
  *

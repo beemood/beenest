@@ -1,5 +1,5 @@
 import { NotSupportedError } from '@beenest/utils';
-import { ZodType } from 'zod';
+import { type ZodType } from 'zod';
 import { booleanFilterSchema } from '../prisma-filters/boolean-filter.js';
 import { dateFilterSchema } from '../prisma-filters/date-time-filter.js';
 import { integerFilterSchema } from '../prisma-filters/integer-filter.js';

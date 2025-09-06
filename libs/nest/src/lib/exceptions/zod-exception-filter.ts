@@ -1,10 +1,10 @@
 import {
-  ArgumentsHost,
+  type ArgumentsHost,
   Catch,
-  ExceptionFilter,
-  UnprocessableEntityException,
+  type ExceptionFilter,
 } from '@nestjs/common';
 import { ZodError } from 'zod';
+import { normalizeZodError } from './normalize-zod-error.js';
 
 /**
  * Catch Zod validation errors and convert them into nestjs UnprocessableEntityException and throw it.
@@ -14,8 +14,6 @@ import { ZodError } from 'zod';
 @Catch(ZodError)
 export class ZodExceptionFilter implements ExceptionFilter {
   catch(exception: ZodError, host: ArgumentsHost) {
-    throw new UnprocessableEntityException({
-      errors: JSON.parse(exception.message),
-    });
+    throw normalizeZodError(exception);
   }
 }

@@ -1,5 +1,5 @@
-import { INestApplication, Module } from '@nestjs/common';
-import { Test, TestingModule } from '@nestjs/testing';
+import { type INestApplication, Module } from '@nestjs/common';
+import { Test, type TestingModule } from '@nestjs/testing';
 import request from 'supertest';
 import { ResourceController } from '../controllers/resource-controller.js';
 import { AutoMethod } from './auto-method.js';

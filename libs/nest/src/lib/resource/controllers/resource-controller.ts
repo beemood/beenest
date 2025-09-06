@@ -1,7 +1,8 @@
 import { inferResourceName } from '@beenest/utils';
-import { Controller } from '@nestjs/common';
+import { Controller, UseFilters } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { isPublicName } from '../../common/is-public-name.js';
+import { CommonExceptionFilter } from '../../exceptions/common-exception-filter.js';
 import { PublicResource } from '../../metadata/public.js';
 import { SecuredResource } from '../../metadata/secured.js';
 
@@ -14,6 +15,8 @@ import { SecuredResource } from '../../metadata/secured.js';
  */
 export function ResourceController(): ClassDecorator {
   return (...args) => {
+    UseFilters(CommonExceptionFilter)(...args);
+
     Controller()(...args);
     const className = args[0].name;
 

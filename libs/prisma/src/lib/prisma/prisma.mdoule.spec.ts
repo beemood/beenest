@@ -1,4 +1,4 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import { Test, type TestingModule } from '@nestjs/testing';
 import { PrismaModule } from './prisma.module.js';
 import { getClientToken } from './providers/client.js';
 import { getRepositoryToken } from './providers/repository.js';

@@ -1,4 +1,4 @@
-import { names, Names } from './names.js';
+import { names, type Names } from './names.js';
 
 /**
  * Transforms a given word into its plural form in American English.

@@ -1,7 +1,8 @@
 import { inferResourceName, OperationNames, pluralNames } from '@beenest/utils';
 import { Post } from '@nestjs/common';
-import { ApiBody, ApiOperation } from '@nestjs/swagger';
+import { ApiOperation } from '@nestjs/swagger';
 import { OperationName } from '../../metadata/operation-name.js';
+import { ArrayApiBody } from '../swagger/api-body.js';
 import { SelectParams } from '../swagger/select-params.js';
 
 /**
@@ -23,8 +24,6 @@ export function SaveMany(): MethodDecorator {
     ApiOperation({ summary })(...args);
     SelectParams()(...args);
 
-    ApiBody({ schema: { type: 'object', properties: {} }, isArray: true })(
-      ...args
-    );
+    ArrayApiBody()(...args);
   };
 }

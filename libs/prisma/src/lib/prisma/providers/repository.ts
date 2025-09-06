@@ -1,5 +1,5 @@
 import { inferResourceName, names } from '@beenest/utils';
-import { Inject, Provider } from '@nestjs/common';
+import { Inject, type Provider } from '@nestjs/common';
 import { getClientToken } from './client.js';
 
 /**

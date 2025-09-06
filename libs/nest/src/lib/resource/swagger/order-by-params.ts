@@ -13,6 +13,18 @@ export function OrderByParams(): MethodDecorator {
       type: 'object',
       properties: {},
       required: false,
+      examples: {
+        Empty: {
+          value: {},
+        },
+        'Order by id descendingly': {
+          value: {
+            orderBy: {
+              id: 'desc',
+            },
+          },
+        },
+      },
     })(...args);
   };
 }

@@ -4,7 +4,7 @@ import {
   isEmptyString,
   parseJsonOrParam,
 } from '@beenest/utils';
-import z, { ZodBoolean } from 'zod';
+import z, { type ZodBoolean } from 'zod';
 
 /**
  * Create an object schema from {@link fields} that parses objects like `Record<string,boolean>`
@@ -42,17 +42,14 @@ export function createBooleanSchema<T extends object>(
     throw new EmptyStringError(`The field at the index ${emptyIndex} is empty`);
   }
 
-  return z
-    .preprocess(
-      parseJsonOrParam,
-      z
-        .object({
-          ...fields.reduce((p, c) => {
-            return { ...p, [c]: z.boolean().optional() };
-          }, {}),
-        } as Record<keyof T, ZodBoolean>)
-        .partial()
-        .optional()
-    )
-    .nullable();
+  return z.preprocess(
+    parseJsonOrParam,
+    z
+      .object({
+        ...fields.reduce((p, c) => {
+          return { ...p, [c]: z.boolean().optional() };
+        }, {}),
+      } as Record<keyof T, ZodBoolean>)
+      .partial()
+  );
 }

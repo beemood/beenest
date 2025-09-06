@@ -1,5 +1,5 @@
-import { ExecutionContext, SetMetadata } from '@nestjs/common';
-import { Reflector } from '@nestjs/core';
+import { type ExecutionContext, SetMetadata } from '@nestjs/common';
+import { type Reflector } from '@nestjs/core';
 
 export const SECURED_METADATA_KEY = Symbol('SECURED_METADATA_KEY');
 

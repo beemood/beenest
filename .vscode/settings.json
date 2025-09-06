@@ -6,5 +6,5 @@
     "source.sortImports": "always",
     "source.organizeImports": "always"
   },
-  "eslint.validate": ["json"]
+  "eslint.validate": ["javascript", "typescript"]
 }

@@ -2,7 +2,7 @@ import * as z from 'zod';
 
 export const descriptionSchema = z
   .string()
-  .max(400)
+  .max(400, { error: 'must not exceed 400 characters' })
   .register(z.globalRegistry, {
     id: 'description',
     title: 'Description',

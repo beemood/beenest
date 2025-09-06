@@ -1,5 +1,6 @@
 import { InvalidNameError } from '../../errors/errors.js';
-import { createStartsWithFunction } from '../../func/create-starts-with-function.js';
+import { createContainsFunction } from '../../func/create-contains-function.js';
+
 import { OPERATION_NAME_EXPRESSION } from './is-operation-name.js';
 /**
  * Operation names enum
@@ -35,23 +36,23 @@ export enum OperationNames {
  * ```
  */
 export function inferOperationName(operationName: string): OperationNames {
-  const sw = createStartsWithFunction(operationName);
+  const cn = createContainsFunction(operationName);
 
-  if (sw('findOne', 'readOne')) {
+  if (cn('findOne', 'readOne', 'getOne')) {
     return OperationNames.READ_ONE;
-  } else if (sw('saveOne', 'createOne')) {
+  } else if (cn('saveOne', 'createOne', 'postOne')) {
     return OperationNames.WRITE_ONE;
-  } else if (sw('updateOne', 'editOne', 'changeOne')) {
+  } else if (cn('updateOne', 'editOne', 'changeOne')) {
     return OperationNames.UPDATE_ONE;
-  } else if (sw('deleteOne', 'dropOne', 'removeOne')) {
+  } else if (cn('deleteOne', 'dropOne', 'removeOne')) {
     return OperationNames.DELETE_ONE;
-  } else if (sw('findMany', 'readMany')) {
+  } else if (cn('findMany', 'readMany', 'findAll', 'getMany', 'getAll')) {
     return OperationNames.READ_MANY;
-  } else if (sw('saveMany', 'createMany')) {
+  } else if (cn('saveMany', 'createMany', 'postMany')) {
     return OperationNames.WRITE_MANY;
-  } else if (sw('updateMany', 'editMany', 'changeMany')) {
+  } else if (cn('updateMany', 'editMany', 'changeMany')) {
     return OperationNames.UPDATE_MANY;
-  } else if (sw('deleteMany', 'dropMany', 'removeMany')) {
+  } else if (cn('deleteMany', 'dropMany', 'removeMany')) {
     return OperationNames.DELETE_MANY;
   }
 

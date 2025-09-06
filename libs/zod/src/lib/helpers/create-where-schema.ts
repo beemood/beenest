@@ -1,10 +1,10 @@
 import { parseJsonOrReturn, toNullFunction } from '@beenest/utils';
-import z, { preprocess, ZodType } from 'zod';
-import { BooleanFilter } from '../prisma-filters/boolean-filter.js';
-import { DateTimeFilter } from '../prisma-filters/date-time-filter.js';
-import { IntegerFilter } from '../prisma-filters/integer-filter.js';
-import { NumberFilter } from '../prisma-filters/number-filter.js';
-import { StringFilter } from '../prisma-filters/string-filter.js';
+import z, { preprocess, type ZodType } from 'zod';
+import { type BooleanFilter } from '../prisma-filters/boolean-filter.js';
+import { type DateTimeFilter } from '../prisma-filters/date-time-filter.js';
+import { type IntegerFilter } from '../prisma-filters/integer-filter.js';
+import { type NumberFilter } from '../prisma-filters/number-filter.js';
+import { type StringFilter } from '../prisma-filters/string-filter.js';
 import { pickFilterSchema } from './pick-filter-schema.js';
 
 export function createWhereSchema<T extends Record<string, ZodType>>(

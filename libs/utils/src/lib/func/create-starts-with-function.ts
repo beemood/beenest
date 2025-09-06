@@ -13,6 +13,7 @@ export function createStartsWithFunction(
     if (caseSenstive == false) {
       mainString = mainString.toLowerCase();
     }
+
     for (let s of startWithValues) {
       if (caseSenstive == false) {
         s = s.toLowerCase();

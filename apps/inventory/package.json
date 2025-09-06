@@ -1,5 +1,5 @@
 {
-  "version": "0.0.7",
+  "version": "0.0.10",
   "name": "@beenest/inventory",
   "displayName": "Inventory",
   "description": "Inventory",
@@ -78,6 +78,15 @@
           ],
           "cwd": "{projectRoot}",
           "parallel": true
+        }
+      },
+      "serve-static": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            "nodemon"
+          ],
+          "cwd": "{projectRoot}"
         }
       }
     }

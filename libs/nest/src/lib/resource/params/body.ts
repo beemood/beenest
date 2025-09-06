@@ -1,5 +1,5 @@
 import { Body as __Body } from '@nestjs/common';
-import { ZodType } from 'zod';
+import { type ZodType } from 'zod';
 /**
  * Inject `body` from request
  *

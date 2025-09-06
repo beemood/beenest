@@ -1,3 +1,4 @@
+import { isOperationNameOrThrow } from '@beenest/utils';
 import { DeleteMany } from './delete-many.js';
 import { DeleteOneById } from './delete-one-by-id.js';
 import { FindMany } from './find-many.js';
@@ -16,6 +17,8 @@ import { UpdateOneById } from './update-one-by-id.js';
 export function AutoMethod(): MethodDecorator {
   return (...args) => {
     const methodName = args[1].toString();
+
+    isOperationNameOrThrow(methodName);
 
     const sw = (...values: string[]) => {
       for (const v of values) {

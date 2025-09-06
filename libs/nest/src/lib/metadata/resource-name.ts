@@ -1,6 +1,6 @@
 import { inferResourceName } from '@beenest/utils';
-import { ExecutionContext, SetMetadata } from '@nestjs/common';
-import { Reflector } from '@nestjs/core';
+import { type ExecutionContext, SetMetadata } from '@nestjs/common';
+import { type Reflector } from '@nestjs/core';
 
 export const RESOURCE_NAME_METADATA_KEY = Symbol('RESOURCE_NAME_METADATA_KEY');
 

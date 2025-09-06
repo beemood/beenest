@@ -1,5 +1,5 @@
 {
-  "version": "0.0.7",
+  "version": "0.0.10",
   "name": "@beenest/zod",
   "displayName": "Common Zod Schemas",
   "description": "Common Zod Schemas",

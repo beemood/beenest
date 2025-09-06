@@ -1,5 +1,5 @@
 {
-  "version": "0.0.7",
+  "version": "0.0.10",
   "name": "@beenest/nest",
   "displayName": "Nest",
   "description": "Nest",
@@ -75,14 +75,14 @@
     "@nestjs/common": "^11.1.6",
     "@nestjs/core": "^11.1.6",
     "@nestjs/swagger": "^11.2.0",
-    "zod": "^4.1.5"
+    "zod": "^4.1.5",
+    "@nestjs/event-emitter": "^3.0.1",
+    "@nestjs/throttler": "^6.4.0",
+    "helmet": "^8.1.0"
   },
   "dependencies": {
     "@beenest/utils": "workspace:*",
-    "@nestjs/event-emitter": "^3.0.1",
-    "@nestjs/throttler": "^6.4.0",
-    "@swc/helpers": "~0.5.11",
-    "helmet": "^8.1.0"
+    "@swc/helpers": "~0.5.11"
   },
   "devDependencies": {
     "@nestjs/testing": "^11.1.6",

@@ -3,8 +3,8 @@ import * as z from 'zod';
 export const rateSchema = z.coerce
   .number()
   .int()
-  .min(1, { error: 'must be greater or equal to 1' })
-  .max(5, { error: 'must be less or equal to 5' })
+  .min(1, { error: 'must be at least 1' })
+  .max(5, { error: 'must not exceed 5' })
   .register(z.globalRegistry, {
     id: 'rate',
     title: 'Rate',

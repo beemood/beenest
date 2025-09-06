@@ -1,5 +1,5 @@
 import { names } from '@beenest/utils';
-import { Logger, Type } from '@nestjs/common';
+import { Logger, type Type } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';

@@ -1,4 +1,4 @@
-import { Inject, Provider } from '@nestjs/common';
+import { Inject, type Provider } from '@nestjs/common';
 
 /**
  * Get prisma client injection token

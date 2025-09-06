@@ -1,24 +1,21 @@
-import {
-  InternalServerErrorException,
-  UnprocessableEntityException,
-} from '@nestjs/common';
+import { UnprocessableEntityException } from '@nestjs/common';
 
 /**
  * Convert prisma errors into nestjs exceptions and throw it.
- * @param error
+ * @param exception PrismaError
  */
-export function normalizePrismaError(error: any) {
-  if (error.code === 'P2002') {
-    throw new UnprocessableEntityException({
+export function normalizePrismaError(exception: any) {
+  if (exception.code === 'P2002') {
+    return new UnprocessableEntityException({
       errors: [
         {
           origin: 'string',
           code: 'unique',
-          path: error.meta?.target,
+          path: exception.meta?.target,
           message: `must be unique`,
         },
       ],
     });
   }
-  throw new InternalServerErrorException('Unkown database operation error');
+  return null;
 }

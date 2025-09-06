@@ -8,3 +8,5 @@ export const pageObjectSchema = z
     skip: skipSchema,
   })
   .partial();
+
+export type Page = z.infer<typeof pageObjectSchema>;

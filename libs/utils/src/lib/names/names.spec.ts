@@ -1,4 +1,4 @@
-import { Names, names } from './names.js';
+import { type Names, names } from './names.js';
 
 describe('names', () => {
   it('should transform name into all variants', () => {

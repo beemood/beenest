@@ -14,6 +14,18 @@ export function SelectParams(): MethodDecorator {
       type: 'object',
       properties: {},
       required: false,
+      examples: {
+        Empty: {
+          value: {},
+        },
+        'Select id field': {
+          value: {
+            select: {
+              id: true,
+            },
+          },
+        },
+      },
     })(...args);
 
     ApiQuery({
@@ -22,6 +34,18 @@ export function SelectParams(): MethodDecorator {
       type: 'object',
       properties: {},
       required: false,
+      examples: {
+        Empty: {
+          value: {},
+        },
+        'Omit id field': {
+          value: {
+            omit: {
+              id: true,
+            },
+          },
+        },
+      },
     })(...args);
 
     ApiQuery({
@@ -30,6 +54,20 @@ export function SelectParams(): MethodDecorator {
       type: 'object',
       properties: {},
       required: false,
+      examples: {
+        Empty: {
+          value: {},
+        },
+        'Include category relation and select id field': {
+          value: {
+            include: {
+              category: {
+                select: { id: true },
+              },
+            },
+          },
+        },
+      },
     })(...args);
   };
 }

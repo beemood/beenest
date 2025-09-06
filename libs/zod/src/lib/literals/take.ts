@@ -7,4 +7,5 @@ export const takeSchema = positiveIntegerSchema
     id: 'take',
     description: 'Limit query result to a number of items',
     title: 'Take',
-  });
+  })
+  .default(20);

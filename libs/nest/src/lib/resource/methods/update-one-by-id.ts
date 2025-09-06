@@ -1,7 +1,8 @@
 import { inferResourceName, names, OperationNames } from '@beenest/utils';
 import { Put } from '@nestjs/common';
-import { ApiBody, ApiOperation } from '@nestjs/swagger';
+import { ApiOperation } from '@nestjs/swagger';
 import { OperationName } from '../../metadata/operation-name.js';
+import { ObjectApiBody } from '../swagger/api-body.js';
 import { SelectParams } from '../swagger/select-params.js';
 
 /**
@@ -22,6 +23,6 @@ export function UpdateOneById(): MethodDecorator {
     OperationName(OperationNames.UPDATE_ONE)(...args);
     ApiOperation({ summary })(...args);
     SelectParams()(...args);
-    ApiBody({ schema: { type: 'object', properties: {} } })(...args);
+    ObjectApiBody()(...args);
   };
 }

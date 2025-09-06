@@ -12,6 +12,18 @@ export function WhereParams(): MethodDecorator {
       type: 'object',
       properties: {},
       required: false,
+      examples: {
+        Empty: {
+          value: {},
+        },
+        'Query items by id': {
+          value: {
+            where: {
+              id: { gt: 0 },
+            },
+          },
+        },
+      },
     })(...args);
   };
 }

@@ -1,7 +1,7 @@
-import { ProjectGeneratorSchema } from './schema';
+import { type ProjectGeneratorSchema } from './schema';
 import { getFirstSegment, getLastSegment } from '@beenest/utils';
 
-import { NormalizedProjectGeneratorSchema } from './normalized-schema';
+import { type NormalizedProjectGeneratorSchema } from './normalized-schema';
 import { join } from 'path';
 
 export function normalizeProjectGeneratorSchema(

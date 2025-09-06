@@ -1,6 +1,6 @@
 import { PrismaModule } from '@beenest/prisma';
 import { Module } from '@nestjs/common';
-import { CategoryModule } from './resources/category.module.js';
+import { CategoryModule } from './resources/category/category.module.js';
 
 @Module({
   imports: [

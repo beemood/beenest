@@ -9,9 +9,22 @@ export default [
       parser: await import('jsonc-eslint-parser'),
     },
   },
+
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
   ...nx.configs['flat/javascript'],
+
+  {
+    rules: {
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          fixStyle: 'inline-type-imports',
+        },
+      ],
+    },
+  },
+
   {
     ignores: [
       '**/dist',
