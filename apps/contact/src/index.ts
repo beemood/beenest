@@ -1,4 +1,0 @@
-// @index(['./app/**/*.ts', '!./**/*.{spec,test}.ts'], f => `export * from '${f.path}.js'`)
-export * from './app/app.module.js';
-export * from './app/contact-app.module.js';
-
