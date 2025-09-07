@@ -1,6 +1,6 @@
 import z from 'zod';
-import { skipSchema } from '../literals/skip.js';
-import { takeSchema } from '../literals/take.js';
+import { skipSchema } from '../schemas/skip.js';
+import { takeSchema } from '../schemas/take.js';
 
 export const pageObjectSchema = z
   .object({

@@ -181,6 +181,9 @@ importers:
       '@beenest/prisma':
         specifier: workspace:*
         version: link:../../libs/prisma
+      '@beenest/utils':
+        specifier: workspace:*
+        version: link:../../libs/utils
       '@beenest/zod':
         specifier: workspace:*
         version: link:../../libs/zod

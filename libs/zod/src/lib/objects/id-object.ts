@@ -1,5 +1,5 @@
 import z from 'zod';
-import { idSchema } from '../literals/id.js';
+import { idSchema } from '../schemas/id.js';
 
 export const idObjectSchema = z.object({
   id: idSchema,

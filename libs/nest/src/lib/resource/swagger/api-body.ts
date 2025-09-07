@@ -1,14 +1,15 @@
-import { ApiBody } from '@nestjs/swagger';
+import { ApiBody, type ApiBodyOptions } from '@nestjs/swagger';
 
-export function ObjectApiBody(): MethodDecorator {
+export function ObjectApiBody(options?: ApiBodyOptions): MethodDecorator {
   return (...args) => {
-    ApiBody({
-      schema: { properties: {} },
+    options = options ?? {
+      type: 'object',
       examples: {
         Empty: { value: {} },
         'Sample input': { value: { name: 'some' } },
       },
-    })(...args);
+    };
+    ApiBody(options)(...args);
   };
 }
 

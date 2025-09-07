@@ -121,6 +121,7 @@
   "dependencies": {
     "@beenest/nest": "workspace:*",
     "@beenest/prisma": "workspace:*",
+    "@beenest/utils": "workspace:*",
     "@beenest/zod": "workspace:*",
     "@nestjs/common": "^11.1.6",
     "@nestjs/config": "^4.0.2",
