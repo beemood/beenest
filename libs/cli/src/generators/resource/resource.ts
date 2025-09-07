@@ -15,18 +15,20 @@ export async function resourceGenerator(
   options: ResourceGeneratorSchema
 ) {
   const __names = names(options.name);
+
   const mainProjectJson = await readJsonFile('package.json');
 
   const shortProjectName = getLastSegment(options.project);
-  const projectName = [
+
+  const fullProjectName = [
     getFirstSegment(mainProjectJson.name),
     shortProjectName,
   ].join('/');
-  const fullProjectName = projectName;
 
-  const projectCofig = readProjectConfiguration(tree, options.project);
+  const projectCofig = readProjectConfiguration(tree, fullProjectName);
 
   const sourceRoot = path.join(__dirname, 'files');
+  
   const targetRoot = path.join(
     projectCofig.root,
     'src/app/resources',
@@ -37,7 +39,7 @@ export async function resourceGenerator(
     ...__names,
     fullProjectName,
     shortProjectName,
-    projectName,
+    projectName: fullProjectName,
   });
   await formatFiles(tree);
 }

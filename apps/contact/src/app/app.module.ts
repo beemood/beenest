@@ -1,8 +1,8 @@
 import { CommonModule } from '@beenest/nest';
 import { Module } from '@nestjs/common';
-import { ContactModule } from './contact.module.js';
+import { ContactAppModule } from './contact-app.module.js';
 
 @Module({
-  imports: [CommonModule, ContactModule],
+  imports: [CommonModule, ContactAppModule],
 })
 export class AppModule {}
