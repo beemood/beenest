@@ -25,9 +25,8 @@ model Category {
 model Product {
   id Int @id @default(autoincrement())
 
-  name String @unique
-  upc  String @unique
-
+  name        String  @unique
+  upc         String  @unique
   description String?
 
   category   Category? @relation(fields: [categoryId], references: [id])
